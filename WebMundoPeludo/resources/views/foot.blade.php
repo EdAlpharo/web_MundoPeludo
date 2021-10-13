@@ -22,23 +22,19 @@
         <div class="collapse navbar-collapse text-center" id="navbarsExample11">
             <ul class="navbar-nav">
             <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="/">INICIO</a>
+                    <a class="nav-link active navbar-brand" href="/">Administrar usuario</a>
                 </li>
                 <li class="divider-vertical-second-menu"></li>
                 <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="">NOSOTROS</a>
+                    <a class="nav-link active navbar-brand" href="">Administrar mascotas y articulos</a>
                 </li>
                 <li class="divider-vertical-second-menu"></li>
                 <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="">MASCOTAS</a>
+                    <a class="nav-link active navbar-brand" href="">Inventario de mascotas y articulos</a>
                 </li>
                 <li class="divider-vertical-second-menu"></li>
                 <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="">PRODUCTOS</a>
-                </li>
-                <li class="divider-vertical-second-menu"></li>
-                <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="">INFORMES</a>
+                    <a class="nav-link active navbar-brand" href="">Solicitud de mascotas y articulos</a>
                 </li>
             </ul>
         </div>
