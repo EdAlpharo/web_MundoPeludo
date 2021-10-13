@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <nav class="navbar-nav navbar-expand-sm navbar-light bg-light" id="topheader">
+    <nav class="navbar-nav navbar-expand-sm navbar-dark bg-primary" id="topheader">
     <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
