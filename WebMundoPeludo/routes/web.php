@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('foot');
 });
+
+Route::get('login', ['as'=> 'Llogin', function () {
+    return view('login');
+}]);
