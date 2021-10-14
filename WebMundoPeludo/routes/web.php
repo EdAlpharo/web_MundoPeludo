@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('foot');
+    return view('login');
 });
 
-Route::get('login', ['as'=> 'Llogin', function () {
-    return view('login');
+Route::get('Admin_users', ['as'=> 'AdminUsers', function () {
+    return view('Admin_users');
 }]);
