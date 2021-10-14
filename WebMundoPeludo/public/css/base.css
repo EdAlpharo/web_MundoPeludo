@@ -2,7 +2,6 @@
     color: white !important;
     background-color: #812228 !important;
 }
-<<<<<<< HEAD
 
 body{
     background-image: url("../img/F3.jpg");
@@ -22,9 +21,3 @@ body{
         border-radius: 10px;
         box-shadow: 0px 0px 10px 0px rgb(231, 158, 63);
         }
-=======
-.elemento{
-    font-size: 18px;
-    color:black;
-}
->>>>>>> 21af7ede053f2d806e5528f848aa9722b33564bd
