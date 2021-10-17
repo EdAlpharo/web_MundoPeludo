@@ -16,22 +16,23 @@
 <nav class="navbar-nav navbar-expand-sm navbar-light bg-light navbar" id="topheader">
     <h1>Sistema administrativo</h1>
     <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid">
+            <img src="{{ asset('img/logo.jpg')}}" class="logo" style="width: 125px; height: 125px; float:center; display:block;margin:0 auto 0 auto; border-radius:10%">
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-center" id="navbarsExample11">
+        <div class="collapse navbar-collapse text-center" id="navbar">
             <ul class="navbar-nav">
                 <div class="dropdown">
-                <button class="dropbtn">INICIO</button>
+                <button class="dropbtn" href="#">INICIO</button>
                 </div>
-
-                <li class="divider-vertical-second-menu"></li>
                 <div class="dropdown">
                     <button class="dropbtn">ADMINISTRACIÓN</button>
                 <div class="dropdown-content">
                     <a href="#">Mascotas</a>
                     <a href="#">Artículos</a>
+                    <a href="#">Usuarios</a>
                 </div>
                 </div>
                 <div class="dropdown">
@@ -46,11 +47,10 @@
                 <div class="dropdown-content">
                     <a href="#">Mascotas</a>
                     <a href="#">Artículos</a>
+                    <a href="#">Usuarios</a>
                 </div>
                 </div>
             </ul>
-
-
     </div>
 </nav>
 
@@ -78,13 +78,13 @@
 
       <!-- Right -->
       <div>
-        <a class="text-white me-4">
+        <a class="text-white me-4" href="">
         <img src="{{ asset('img/facebook.png')}}" class="img-responsive" style="filter: invert(1.0)">
         </a>
-        <a  class="text-white me-4">
+        <a  class="text-white me-4" href="">
         <img src="{{ asset('img/twitter.png')}}" class="img-responsive" style="filter: invert(1.0)">
         </a>
-        <a class="text-white me-4">
+        <a class="text-white me-4" href="">
         <img src="{{ asset('img/youtube.png')}}" class="img-responsive" style="filter: invert(1.0)">
         </a>
       </div>
