@@ -13,7 +13,8 @@
 </head>
 <body>
 
-<nav class="navbar-nav navbar-expand-sm navbar-light bg-light" id="topheader">
+<nav class="navbar-nav navbar-expand-sm navbar-light bg-light navbar" id="topheader">
+    <h1>Sistema administrativo</h1>
     <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,22 +22,33 @@
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarsExample11">
             <ul class="navbar-nav">
-            <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="">INICIO</a>
-                </li>
-                <li class="divider-vertical-second-menu"></li>
-                <li class="nav-item">
-                    <a class="nav-link active navbar-brand">ADMINISTRACION</a>
-                </li>
-                <li class="divider-vertical-second-menu"></li>
-                <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="">INVENTARIO</a>
-                </li>
-                <li class="divider-vertical-second-menu"></li>
-                <li class="nav-item">
-                    <a class="nav-link active navbar-brand" href="">SOLICITUD</a>
-                </li>
+                <div class="dropdown">
+                <button class="dropbtn">INICIO</button>
+                </div>
 
+                <li class="divider-vertical-second-menu"></li>
+                <div class="dropdown">
+                    <button class="dropbtn">ADMINISTRACIÓN</button>
+                <div class="dropdown-content">
+                    <a href="#">Mascotas</a>
+                    <a href="#">Artículos</a>
+                </div>
+                </div>
+                <div class="dropdown">
+                <button class="dropbtn">INVENTARIO</button>
+                <div class="dropdown-content">
+                    <a href="#">Mascotas</a>
+                    <a href="#">Artículos</a>
+                </div>
+                </div>
+                <div class="dropdown">
+                <button class="dropbtn">ESTADISTICAS</button>
+                <div class="dropdown-content">
+                    <a href="#">Mascotas</a>
+                    <a href="#">Artículos</a>
+                </div>
+                </div>
+            </ul>
 
 
     </div>
