@@ -36,3 +36,7 @@ Route::get('registroMascotas', ['as'=> 'NMascotas', function () {
 Route::get('registroUsuarios', ['as'=> 'NUsuarios', function () {
     return view('registroUsuarios');
 }]);
+
+Route::get('estadisticasMascotas', ['as'=> 'estMascotas', function () {
+    return view('estadisticas_mascotas');
+}]);
