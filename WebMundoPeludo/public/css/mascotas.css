@@ -13,11 +13,12 @@
  div#general{
    margin: auto;
    margin-top: 40px;
-   width: 480px;
-   height: 500px;
+   width: 500px;
+   height: auto;
    border-radius: 10px;
    box-shadow:5px 5px 40px #000;
    background: rgba(5, 7, 12, 0.30);
+
  }
 
   input{
