@@ -20,3 +20,15 @@ Route::get('/', function () {
 Route::get('Admin_users', ['as'=> 'AdminUsers', function () {
     return view('Admin_users');
 }]);
+
+Route::get('registroArticulos', ['as'=> 'NArticulos', function () {
+    return view('registroArticulos');
+}]);
+
+Route::get('registroMascotas', ['as'=> 'NMascotas', function () {
+    return view('registroMascotas');
+}]);
+
+Route::get('registroUsuarios', ['as'=> 'NUsuarios', function () {
+    return view('registroUsuarios');
+}]);

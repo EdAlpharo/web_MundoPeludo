@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="<?php echo asset('css/base.css')?>" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-    <title>Document</title>
 </head>
 <body>
 
