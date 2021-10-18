@@ -9,11 +9,12 @@
 </head>
 
 <body>
-<h1 class="display-3  text-center" style="color:#BD9B37"; >Inicio de sesion</h1>
+
 
 <div class="container">
 
   <form  class="contenedorform mt-5">
+      <h1 class="display-5  text-center" style="color:#BD9B37"; >Inicio de sesión</h1>
 
         <div class="form-group">
 
