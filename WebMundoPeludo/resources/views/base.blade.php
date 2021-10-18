@@ -24,14 +24,14 @@
         <div class="collapse navbar-collapse text-center" id="navbar">
             <ul class="navbar-nav">
                 <div class="dropdown">
-                <button class="dropbtn" href="#">INICIO</button>
+                <button class="dropbtn" href="inicio">INICIO</button>
                 </div>
                 <div class="dropdown">
                     <button class="dropbtn">ADMINISTRACIÓN</button>
                 <div class="dropdown-content">
                     <a href="#">Mascotas</a>
                     <a href="#">Artículos</a>
-                    <a href="#">Usuarios</a>
+                    <a href="Admin_users">Usuarios</a>
                 </div>
                 </div>
                 <div class="dropdown">

@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('inicio', function () {
+    return view('inicio');
+});
+
 Route::get('Admin_users', ['as'=> 'AdminUsers', function () {
     return view('Admin_users');
 }]);
