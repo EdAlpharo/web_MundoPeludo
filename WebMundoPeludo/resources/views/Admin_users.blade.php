@@ -1,18 +1,21 @@
 @extends('base')
 
 @section('contenido')
+<link rel="stylesheet" href="<?php echo asset('css/Admin_user.css')?>" type="text/css">
 
-<div class="container-fluid" style="padding: 20px">
 
-<form class="form-search content-search navbar-form" action="" method="post">
-    <div class="input-group ">
-        <input placeholder="Ingrese el nombre a buscar" class="form-control form-text btnbuscar" type="text" size="15"  />
-        <span class="input-group-btn">
-        <button type="button" class="btn btn-outline-success">Buscar</button>
-        </span>
+<div class="container">
+<h3 style="text-align: center; padding-top:25px">Administración de usuarios</h3>
+<form class="form-search content-search navbar-form" action="" style="align: center">
+    <div class="input-group" style="padding: 25px">
+        <form class="d-flex">
+        <input class="me-2" placeholder="Ingrese el usuario a buscar" size="25">
+        <button class="btn btn-outline-success">Buscar</button>
+      </form>
     </div>
 </form>
-<div class="container-fluid" style="padding: 20px">
+
+<div class="container-fluid" style="padding: 25px">
     <table class="table table-success">
   <thead>
     <tr>
@@ -58,4 +61,5 @@ task_alt</td>
 </table>
 </div>
 
+</div>
 @stop
