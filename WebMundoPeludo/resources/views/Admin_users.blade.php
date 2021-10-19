@@ -30,8 +30,13 @@
       <td>El JK</td>
       <td>123</td>
       <td>Venta</td>
-      <td>X</td>
-      <td>A</td>
+      <td><span class="material-icons-outlined">
+delete
+</span>
+</span>
+</span></td>
+      <td><span class="material-icons-outlined">
+task_alt</td>
     </tr>
     <tr>
       <td>003</td>
