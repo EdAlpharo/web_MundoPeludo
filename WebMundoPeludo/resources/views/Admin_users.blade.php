@@ -46,16 +46,25 @@ task_alt</td>
       <td>El José</td>
       <td>123a</td>
       <td>Cliente</td>
-      <td>X</td>
-      <td>A</td>
+      <td><span class="material-icons-outlined">
+delete
+</span>
+</span>
+</span></td>
+      <td><span class="material-icons-outlined">
+task_alt</td>
     </tr>
-    <tr>
       <td>003</td>
       <td>El José</td>
       <td>123a</td>
       <td>Venta</td>
-      <td>X</td>
-      <td>A</td>
+      <td><span class="material-icons-outlined">
+delete
+</span>
+</span>
+</span></td>
+      <td><span class="material-icons-outlined">
+task_alt</td>
     </tr>
   </tbody>
 </table>
