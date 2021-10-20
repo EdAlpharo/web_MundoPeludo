@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('inicio', function () {
+Route::get('inicio', ['as'=> 'inicio', function () {
     return view('inicio');
-});
+}]);
 
 Route::get('Admin_users', ['as'=> 'AdminUsers', function () {
     return view('Admin_users');

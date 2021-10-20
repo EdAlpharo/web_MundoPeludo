@@ -23,25 +23,25 @@
         </button>
         <div class="collapse navbar-collapse text-center" id="navbar">
             <ul class="navbar-nav">
-                <div class="dropdown">
-                <button class="dropbtn" href="inicio">INICIO</button>
+                <div class="dropdown btn">
+                <a class="dropbtn button btn" href="{{route('inicio')}}">INICIO</a>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown btn">
                     <button class="dropbtn">ADMINISTRACIÓN</button>
                 <div class="dropdown-content">
                     <a href="#">Mascotas</a>
                     <a href="#">Artículos</a>
-                    <a href="Admin_users">Usuarios</a>
+                    <a href="{{route('AdminUsers')}}">Usuarios</a>
                 </div>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown btn">
                 <button class="dropbtn">INVENTARIO</button>
                 <div class="dropdown-content">
                     <a href="#">Mascotas</a>
                     <a href="#">Artículos</a>
                 </div>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown btn">
                 <button class="dropbtn">ESTADISTICAS</button>
                 <div class="dropdown-content">
                     <a href="#">Mascotas</a>
