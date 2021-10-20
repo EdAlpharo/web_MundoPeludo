@@ -45,6 +45,14 @@ Route::get('estadisticasMascotas', ['as'=> 'estMascotas', function () {
     return view('estadisticas_mascotas');
 }]);
 
+Route::get('estadisticasUsuario', ['as'=> 'estUsuarios', function () {
+    return view('estadisticas_usuarios');
+}]);
+
+Route::get('estadisticasArticulos', ['as'=> 'estArticulos', function () {
+    return view('estadisticas_articulos');
+}]);
+
 Route::get('Admin_mascotas', ['as'=> 'AdminMascotas', function () {
     return view('Admin_mascotas');
 }]);

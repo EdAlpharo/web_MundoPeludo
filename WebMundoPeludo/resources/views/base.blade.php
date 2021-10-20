@@ -46,9 +46,9 @@
                 <div class="dropdown btn">
                 <button class="dropbtn">ESTADISTICAS</button>
                 <div class="dropdown-content">
-                    <a href="#">Mascotas</a>
-                    <a href="#">Artículos</a>
-                    <a href="#">Usuarios</a>
+                    <a href="{{route('estMascotas')}}">Mascotas</a>
+                    <a href="{{route('estArticulos')}}">Artículos</a>
+                    <a href="{{route('estUsuarios')}}">Usuarios</a>
                 </div>
                 </div>
             </ul>
