@@ -3,7 +3,7 @@
 @section('contenido')
 <h3 style="text-align: center; padding-top:25px">Carrito de compras</h3>
 
-<div class="container-fluid" style="padding: 25px">
+<div class="container" style="padding: 25px">
     <table class="table table-success">
   <thead>
     <tr>
