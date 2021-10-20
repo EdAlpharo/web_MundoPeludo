@@ -36,7 +36,6 @@
 
 </form>
 
-
 <div class="container-fluid" style="padding: 25px">
     <table class="table table-success">
   <thead>
@@ -107,4 +106,5 @@ task_alt</td>
 </div>
 
 </div>
+
 @stop

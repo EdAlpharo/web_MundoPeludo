@@ -36,18 +36,15 @@
 
 </form>
 
-
 <div class="container-fluid" style="padding: 25px">
     <table class="table table-success">
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Especie</th>
-      <th scope="col">Raza</th>
-      <th scope="col">Edad</th>
-      <th scope="col">Condicion de salud</th>
-      <th scope="col">Vacunado</th>
-      <th scope="col">Sexo</th>
+      <th scope="col">Artículo</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
       <th scope="col">Eliminar</th>
       <th scope="col">Actualizar</th>
     </tr>
@@ -55,12 +52,10 @@
   <tbody>
     <tr>
       <td>001</td>
-      <td>Perro</td>
-      <td>Criolla</td>
-      <td>1</td>
-      <td>Sano</td>
-      <td>si</td>
-      <td>Macho</td>
+      <td>Collar</td>
+      <td>Para perro pequeño</td>
+      <td>$120.00</td>
+      <td>5</td>
       <td><span class="material-icons-outlined">
 delete
 </span>
@@ -72,12 +67,10 @@ task_alt</td>
 
     <tr>
       <td>003</td>
-      <td>Gato</td>
-      <td>Siames</td>
-      <td>.5</td>
-      <td>Sano</td>
-      <td>si</td>
-      <td>Hembra</td>
+      <td>Wiskas</td>
+      <td>lata de 60gr</td>
+      <td>$25.00</td>
+      <td>12</td>
       <td><span class="material-icons-outlined">
 delete
 </span>
@@ -88,12 +81,10 @@ task_alt</td>
 
     </tr>
       <td>004</td>
-      <td>Gato</td>
-      <td>Ejipcio</td>
-      <td>.9</td>
-      <td>Sano</td>
-      <td>si</td>
-      <td>Macho</td>
+      <td>Pelota de juego</td>
+      <td>Pelota para perro</td>
+      <td>$42.00</td>
+      <td>15</td>
       <td><span class="material-icons-outlined">
 delete
 </span>
@@ -105,6 +96,5 @@ task_alt</td>
   </tbody>
 </table>
 </div>
-
 </div>
 @stop
