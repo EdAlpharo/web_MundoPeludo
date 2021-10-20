@@ -60,3 +60,12 @@ Route::get('Admin_mascotas', ['as'=> 'AdminMascotas', function () {
 Route::get('Admin_articulos', ['as'=> 'AdminArticulos', function () {
     return view('Admin_articulos');
 }]);
+
+Route::get('Solicitar_mascota', ['as'=> 'SolicitarMascota', function () {
+    return view('solicitar_mascota');
+}]);
+
+Route::get('Solicitar_articulo', ['as'=> 'SolicitarArticulo', function () {
+    return view('solicitar_articulo');
+}]);
+
