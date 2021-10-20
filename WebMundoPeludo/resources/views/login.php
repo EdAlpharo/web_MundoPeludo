@@ -13,7 +13,7 @@
 
 <div class="container">
 
-  <form  class="contenedorform mt-5">
+  <form  class="contenedorform">
       <h1 class="display-5  text-center" style="color:#BD9B37"; >Inicio de sesión</h1>
 
         <div class="form-group">
