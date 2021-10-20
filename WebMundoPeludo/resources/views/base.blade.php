@@ -31,8 +31,8 @@
                 <div class="dropdown btn">
                     <button class="dropbtn">ADMINISTRACIÓN</button>
                 <div class="dropdown-content">
-                    <a href="#">Mascotas</a>
-                    <a href="#">Artículos</a>
+                    <a href="{{route('AdminMascotas')}}">Mascotas</a>
+                    <a href="{{route('AdminArticulos')}}">Artículos</a>
                     <a href="{{route('AdminUsers')}}">Usuarios</a>
                 </div>
                 </div>

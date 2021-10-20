@@ -40,3 +40,11 @@ Route::get('registroUsuarios', ['as'=> 'NUsuarios', function () {
 Route::get('estadisticasMascotas', ['as'=> 'estMascotas', function () {
     return view('estadisticas_mascotas');
 }]);
+
+Route::get('Admin_mascotas', ['as'=> 'AdminMascotas', function () {
+    return view('Admin_mascotas');
+}]);
+
+Route::get('Admin_articulos', ['as'=> 'AdminArticulos', function () {
+    return view('Admin_articulos');
+}]);

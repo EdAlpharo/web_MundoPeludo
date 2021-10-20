@@ -13,7 +13,7 @@
  div#general{
    margin: auto;
    margin-top: 40px;
-   width: 600px;
+   width: 520px;
    height: 500px;
    border-radius: 10px;
    box-shadow:5px 5px 40px #000;
@@ -22,12 +22,13 @@
  }
 
  input{
-  margin-left: 20px;
+  margin-left: 30px;
   border: 0;
   border-radius: 5px;
+  float: right;
   text-align: center;
   color: #E2E2E2;
-  background: rgba(5, 7, 12, 0.4);
+  background: rgb(244, 247, 253);
 }
 
  .btnAgregar{
@@ -37,10 +38,11 @@
    width: 100%;
    outline: none;
    border: none;
-   margin: 2em 0;
+   margin: 3em 0;
    text-transform: uppercase;
    background: #03258B;
    opacity: .8;
    transition:opacity .5s ease;
+   border-radius: 10px;
 
  }
