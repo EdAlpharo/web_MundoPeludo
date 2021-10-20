@@ -52,13 +52,12 @@
                 </div>
                 </div>
                 <div class="dropdown btn">
-                <button class="dropbtn">ADOPCIÓN / COMPRA </button>
-                <div class="dropdown-content">
-                    <a href="">Adoptar</a>
-                    <a href="">Comprar</a>
-                    <a href="">Usuarios</a>
+                <a class="dropbtn button btn" href="">ADOPCIÓN</a>
                 </div>
+                <div class="dropdown btn">
+                <a class="dropbtn button btn" href="">COMPRAS</a>
                 </div>
+
             </ul>
     </div>
 </nav>
