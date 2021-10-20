@@ -29,6 +29,9 @@ Route::get('registroArticulos', ['as'=> 'NArticulos', function () {
     return view('registroArticulos');
 }]);
 
+Route::get('carritos_compras', ['as'=> 'NCcompras', function () {
+    return view('carritos_compras');
+    
 Route::get('registroMascotas', ['as'=> 'NMascotas', function () {
     return view('registroMascotas');
 }]);
