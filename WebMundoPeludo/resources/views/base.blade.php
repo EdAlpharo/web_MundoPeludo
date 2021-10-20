@@ -40,7 +40,7 @@
                 <button class="dropbtn">INVENTARIO</button>
                 <div class="dropdown-content">
                     <a href="#">Mascotas</a>
-                    <a href="#">Artículos</a>
+                    <a href="{{route('Carritoscompras')}}">Artículos</a>
                 </div>
                 </div>
                 <div class="dropdown btn">

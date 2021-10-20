@@ -29,7 +29,7 @@ Route::get('registroArticulos', ['as'=> 'NArticulos', function () {
     return view('registroArticulos');
 }]);
 
-Route::get('carritos_compras', ['as'=> 'NCcompras', function () {
+Route::get('carritos_compras', ['as'=> 'Carritoscompras', function () {
     return view('carritos_compras');
 }]);
 
