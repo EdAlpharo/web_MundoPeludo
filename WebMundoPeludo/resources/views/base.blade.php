@@ -51,6 +51,14 @@
                     <a href="{{route('estUsuarios')}}">Usuarios</a>
                 </div>
                 </div>
+                <div class="dropdown btn">
+                <button class="dropbtn">ADOPCIÓN / COMPRA </button>
+                <div class="dropdown-content">
+                    <a href="">Adoptar</a>
+                    <a href="">Comprar</a>
+                    <a href="">Usuarios</a>
+                </div>
+                </div>
             </ul>
     </div>
 </nav>
