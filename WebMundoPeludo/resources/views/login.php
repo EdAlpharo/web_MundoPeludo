@@ -4,33 +4,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">
 </head>
 
 <body>
+<div class="container">
 
+</div>
 
 <div class="container">
 
   <form  class="contenedorform">
       <h1 class="display-5  text-center" style="color:#BD9B37"; >Inicio de sesión</h1>
 
-        <div class="form-group">
+        <div class="form-group" style="padding: 15px">
 
             <label style="color:#DEC57B">Usuario:</label>
            <input type="text" name="txtem" class="form-control">
 
         </div>
-          <div class="form-group">
+          <div class="form-group" style="padding: 15px">
 
             <label style="color:#DEC57B">Contraseña:</label>
             <input type="password" name="txtcont" class="form-control">
 
           </div>
+          <div style="padding: 5px">
+            <p style="color:#DEC57B"> *Error al introducir alguno de los datos</p>
+          </div>
 
-
-    <button type="submit" name="btnadm" class="btn btn-lg btn-block" style=background-color:#C7BE9E >Entrar</button>
+<div>
+    <button type="submit" name="btnadm" class="btn btn-lg btn-block" style="background-color:#C7BE9E" >Entrar</button>
+</div>
 
 
 </form>
