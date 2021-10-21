@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/',['as'=>'login', 'uses'=>'App\Http\Controllers\controladorLogin@login']);
 
 Route::get('inicio', ['as'=> 'inicio', function () {
     return view('inicio');

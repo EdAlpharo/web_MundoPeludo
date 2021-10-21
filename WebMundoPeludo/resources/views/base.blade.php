@@ -57,7 +57,11 @@
                 <div class="dropdown btn">
                 <a class="dropbtn button btn" href="{{route('SolicitarArticulo')}}">COMPRAS</a>
                 </div>
-
+            </ul>
+            <ul>
+                <div class="dropdown btn">
+                <a class="dropbtn button btn" href="#">SALIR</a>
+                </div>
             </ul>
     </div>
 </nav>
