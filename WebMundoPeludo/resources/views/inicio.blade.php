@@ -33,8 +33,18 @@
   </ul>
   
 </div>
+<br>
+<br>
 
 
- 
+
+
+<FONT FACE="Rockwell"><h1><center>Bienvenidos</center></h1></FONT>
+
+<p class="box1">Aqui podras encontrar cualquier tipo de mascota que quieras adoptar</p>
+<p class="box2">Tambien podras encontrar cualquier tipo de articulos para tus mascotas</p>
+<p class="box3">Proyecto de la Universidad</p>
+
+
 
 @stop

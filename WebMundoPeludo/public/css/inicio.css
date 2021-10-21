@@ -9,6 +9,7 @@ body{
     background-color: rgb(255, 255, 255);
     width: 900px;
     padding: 50px;
+    
   }
   
   ul, li {
@@ -69,3 +70,33 @@ body{
     font-size: 20px;
     border-radius: 450%;
   }
+  
+
+
+        p.box1 {
+        width: 400px;
+        margin:20px 60px;
+        padding:50px;
+        font-size:italic;
+        background-color:#aeb339;
+        color:#000;
+        }
+
+        p.box2 {
+
+            width:400px;
+            margin:20px 60px;
+            padding:50px;
+            font-size:italic;
+            background-color:#ecd96f;
+            color:#000;
+            }
+
+            p.box3 {
+                width:400px;
+                margin:20px 60px;
+                padding:50px;
+                font-size:italic;
+                background-color:#f8efd3;
+                color:#000;
+                }
