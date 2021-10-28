@@ -39,22 +39,57 @@
 
 <div class="container-fluid" style="padding: 25px">
     <table class="table table-success">
-    <thead>
-        <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido Paterno</th>
-        <th scope="col">Apellido Materno</th>
-        <th scope="col">Contraseña</th>
-        <th scope="col">Departamento</th>
-        <th scope="col">Eliminar</th>
-        <th scope="col">Actualizar</th>
-        </tr>
-    </thead>
-    <tbody>
-       
-    </tbody>
-    </table>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre Completo</th>
+      <th scope="col">Contraseña</th>
+      <th scope="col">Departamento</th>
+      <th scope="col">Eliminar</th>
+      <th scope="col">Actualizar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>001</td>
+      <td>El JK</td>
+      <td>123</td>
+      <td>Venta</td>
+      <td><span class="material-icons-outlined">
+delete
+</span>
+</span>
+</span></td>
+      <td><span class="material-icons-outlined">
+task_alt</td>
+    </tr>
+    <tr>
+      <td>003</td>
+      <td>El José</td>
+      <td>123a</td>
+      <td>Cliente</td>
+      <td><span class="material-icons-outlined">
+delete
+</span>
+</span>
+</span></td>
+      <td><span class="material-icons-outlined">
+task_alt</td>
+    </tr>
+      <td>003</td>
+      <td>El José</td>
+      <td>123a</td>
+      <td>Venta</td>
+      <td><span class="material-icons-outlined">
+delete
+</span>
+</span>
+</span></td>
+      <td><span class="material-icons-outlined">
+task_alt</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 </div>
