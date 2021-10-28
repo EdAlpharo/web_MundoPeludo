@@ -11,3 +11,4 @@ class usuario extends Model
 
     protected $table = "usuarios";
 }
+    

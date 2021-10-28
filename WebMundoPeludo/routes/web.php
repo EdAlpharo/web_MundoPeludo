@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorEnvios;
 use App\Http\Controllers\controladorLogin;
+use App\Http\Controllers\controladorRecuperacion;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +16,18 @@ use App\Http\Controllers\controladorLogin;
 |
 */
 
-Route::get('/', ['as'=> 'login', function () {
-    return view('login');
-}]);
+
+Route::get('/', [controladorLogin::class,'index']);
 
 Route::get('inicio', ['as'=> 'inicio', function () {
     return view('inicio');
 }]);
 
+
 Route::get('Admin_users', ['as'=> 'AdminUsers', function () {
     return view('Admin_users');
 }]);
+
 
 Route::get('registroArticulos', ['as'=> 'NArticulos', function () {
     return view('registroArticulos');
