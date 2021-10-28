@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controladorEnvios;
+use App\Http\Controllers\controladorLogin;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',['as'=>'login', 'uses'=>'App\Http\Controllers\controladorLogin@login']);
+Route::get('/', ['as'=> 'login', function () {
+    return view('login');
+}]);
 
 Route::get('inicio', ['as'=> 'inicio', function () {
     return view('inicio');
@@ -67,3 +71,8 @@ Route::get('Solicitar_articulo', ['as'=> 'SolicitarArticulo', function () {
     return view('solicitar_articulo');
 }]);
 
+/*RUTAS DE ENVIO DE INFORMACION A BD*/
+Route::post('nuevoUsuario',[controladorEnvios::class, 'registro_usuario'])->name('nuevoUsuario.registro_usuario');
+Route::post('nuevoArticulo',[controladorEnvios::class, 'registro_articulo'])->name('nuevoArticulo.registro_articulo');
+Route::post('nuevaMascota',[controladorEnvios::class, 'registro_mascota'])->name('nuevaMascota.registro_mascota');
+/*FIN*/

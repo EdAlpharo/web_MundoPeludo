@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Usuarios extends Migration
+class Mascotas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class Usuarios extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('mascotas', function (Blueprint $table) {
             $table->id()->unique();
-            $table->string('nombre',100);
-            $table->string('aPaterno',100);
-            $table->string('aMaterno',100);
-            $table->string('email',100);
-            $table->string('pass',64);
-            $table->string('cpass',64);
+            $table->string('especie',100);
+            $table->string('raza',100);
+            $table->integer('edad');
+            $table->string('condicion_salud',240);
+            $table->string('vacunado',64);
+            $table->string('sexo',64);
 
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ class Usuarios extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('mascotas');
     }
 }

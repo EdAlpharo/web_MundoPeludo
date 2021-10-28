@@ -17,49 +17,57 @@
       <center>
       <img src="img/logo3.png" width="60" height="60" /></center>
 
-      <form class="contenedorform2 mt-4">
+
+
+      <form class="contenedorform2 mt-4" action="{{route('nuevoUsuario.registro_usuario')}}" method="POST">
+
+
+
         <div class="form-group" style="padding: 15px">
+
+             @csrf
+
               <left>
            <label><FONT COLOR="white">Nombre:</FONT>  </label>
-           <input type="" class="" id="txtNombre" name="txtNombre" placeholder="Ingrese el nombre" style="WIDTH: auto;">
+           <input type="" class="" id="txtNombre" name="nombre" placeholder="Ingrese el nombre" style="WIDTH: auto;color:black;">
               </left>
         </div>
 
         <div class="form-group" style="padding: 15px">
               <left>
            <label><FONT COLOR="white">Apellido paterno: </FONT>  </label>
-           <input type="" class="" id="txtAPaterno" name="txtAPaterno" placeholder="Ingrese apellido paterno" style="WIDTH: auto;">
+           <input type="" class="" id="txtAPaterno" name="aPaterno" placeholder="Ingrese apellido paterno" style="WIDTH: auto;color:black;">
               </left>
         </div>
 
         <div class="form-group" style="padding: 15px">
               <left>
            <label><FONT COLOR="white">Apellido materno: </FONT>  </label>
-           <input type="" class="" id="txtAMaterno" name="txtAMaterno" placeholder="Ingrese apellido materno" style="WIDTH: auto;">
+           <input type="" class="" id="txtAMaterno" name="aMaterno" placeholder="Ingrese apellido materno" style="WIDTH: auto;color:black;">
               </left>
         </div>
 
         <div class="form-group"style="padding: 15px">
               <left>
            <label><FONT COLOR="white" >Email:</FONT>  </label>
-           <input type="" class="" id="txtEmail" name="txtEmail" placeholder="Ingrese el email" style="WIDTH: auto;">
+           <input type="" class="" id="txtEmail" name="email" placeholder="Ingrese el email" style="WIDTH: auto;color:black;">
               </left>
         </div>
 
         <div class="form-group" style="padding: 15px">
               <left>
            <label><FONT COLOR="white">Contraseña: </FONT>  </label>
-           <input type="" class="" id="txtPass" name="txtPass" placeholder="Ingrese una contraseña" style="WIDTH:auto;">
+           <input type="" class="" id="txtPass" name="pass" placeholder="Ingrese una contraseña" style="WIDTH:auto;color:black;">
               </left>
         </div>
 
         <div class="form-group" style="padding: 15px">
               <left>
            <label><FONT COLOR="white">Confirmación de contraseña: </FONT>  </label>
-           <input type="" class="" id="txtConfimacionPass" name="txtConfimacionPass"  placeholder="Confirme la contraseña" style="WIDTH:auto">
+           <input type="" class="" id="txtConfimacionPass" name="cpass"  placeholder="Confirme la contraseña" style="WIDTH:auto;color:black;">
               </left>
         </div>
-            <center><button class="btnAgregar"><FONT COLOR="white">Agregar registro</font></button></center>
+            <center><button class="btnAgregar" type="submit"><FONT COLOR="white">Agregar registro</font></button></center>
           </form>
     </div>
 

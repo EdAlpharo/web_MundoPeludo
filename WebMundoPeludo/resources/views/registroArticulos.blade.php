@@ -18,36 +18,40 @@
       <H3 align="center" style = "font-family:Calisto MT;"><FONT COLOR="WHITE">Formulario de artículos</FONT></H3>
       <center>
       <img src="img/logo2.png" width="60" height="60" /></center>
-      <form class="contenedorform2 mt-4">
+
+      <form class="contenedorform2 mt-4" action="{{route('nuevoArticulo.registro_articulo')}}" method="POST">
+
         <div class="form-group" style="padding: 0.5cm">
+
+            @csrf
               <left>
            <label><FONT COLOR="WHITE"><b>Articulo: </FONT></label>
-           <input type="" class="" id="txtArticulo" name="txtArticulo" placeholder="Ingrese el nombre del artículo" style="WIDTH: auto;">
+           <input type="" class="" id="txtArticulo" name="articulo" placeholder="Ingrese el nombre del artículo" style="WIDTH: auto;">
            </left><br>
         </div>
 
         <div class="form-group" style="padding: 0.5cm">
               <left>
            <label><FONT COLOR="WHITE">Descripción:</FONT></label>
-           <input type="" class="" id="txtDescripcion" name="txtDescripcion" placeholder="Ingrese la descripción del artículo" style="WIDTH: auto;">
+           <input type="" class="" id="txtDescripcion" name="descripcion" placeholder="Ingrese la descripción del artículo" style="WIDTH: auto;">
               </left><br>
         </div>
 
         <div class="form-group" style="padding: 0.5cm">
               <left>
            <label><FONT COLOR="white">Precio: </FONT></label>
-           <input type="" class="" id="txtPrecio" name="txtPrecio" placeholder="Ingrese el precio" style="WIDTH: auto;">
+           <input type="" class="" id="txtPrecio" name="precio" placeholder="Ingrese el precio" style="WIDTH: auto;">
               </left><br>
         </div>
 
         <div class="form-group" style="padding: 0.5cm">
               <left>
            <label><FONT COLOR="WHITE">Existencia:</FONT></label>
-           <input type="" class="" id="txtExistencia" name="txtExistencia" placeholder="Indique la cantidad disponible" style="WIDTH: auto;">
+           <input type="" class="" id="txtExistencia" name="cantidad" placeholder="Indique la cantidad disponible" style="WIDTH: auto;">
               </left>
         </div>
 
-            <center><button class="btnAgregar">Agregar registro</button></center><br>
+            <center><button class="btnAgregar" type="submit">Agregar registro</button></center><br>
           </form>
       </div>
 
