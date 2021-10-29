@@ -50,46 +50,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>001</td>
-      <td>El JK</td>
-      <td>123</td>
-      <td>Venta</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-    </tr>
-    <tr>
-      <td>003</td>
-      <td>El José</td>
-      <td>123a</td>
-      <td>Cliente</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-    </tr>
-      <td>003</td>
-      <td>El José</td>
-      <td>123a</td>
-      <td>Venta</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-    </tr>
+
   </tbody>
 </table>
+
 </div>
 
 </div>

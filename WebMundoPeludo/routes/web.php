@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\controladorEnvios;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\controladorLogin;
-use App\Http\Controllers\controladorRecuperacion;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,11 @@ Route::get('registroArticulos', ['as'=> 'NArticulos', function () {
     return view('registroArticulos');
 }]);
 
+
 Route::get('carritos_compras', ['as'=> 'Carritoscompras', function () {
     return view('carritos_compras');
 }]);
+
 
 Route::get('registroMascotas', ['as'=> 'NMascotas', function () {
     return view('registroMascotas');
@@ -73,8 +76,9 @@ Route::get('Solicitar_articulo', ['as'=> 'SolicitarArticulo', function () {
     return view('solicitar_articulo');
 }]);
 
+
 /*RUTAS DE ENVIO DE INFORMACION A BD*/
-Route::post('nuevoUsuario',[controladorEnvios::class, 'registro_usuario'])->name('nuevoUsuario.registro_usuario');
-Route::post('nuevoArticulo',[controladorEnvios::class, 'registro_articulo'])->name('nuevoArticulo.registro_articulo');
-Route::post('nuevaMascota',[controladorEnvios::class, 'registro_mascota'])->name('nuevaMascota.registro_mascota');
+Route::post('nuevoUsuario',[PostController::class, 'registro_usuario'])->name('nuevoUsuario.registro_usuario');
+Route::post('nuevoArticulo',[PostController::class, 'registro_articulo'])->name('nuevoArticulo.registro_articulo');
+Route::post('nuevaMascota',[PostController::class, 'registro_mascota'])->name('nuevaMascota.registro_mascota');
 /*FIN*/

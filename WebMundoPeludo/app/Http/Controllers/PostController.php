@@ -8,7 +8,7 @@ use App\Models\articulo;
 use Illuminate\Http\Request;
 
 
-class controladorEnvios extends Controller
+class PostController extends Controller
 {
     public function registro_usuario(Request $request){
 
@@ -57,5 +57,12 @@ class controladorEnvios extends Controller
         return redirect()->route('AdminArticulos');
 
         }
+
+    public function show($id){
+
+        $usuarios = usuario::find($id);
+
+        return view('AdminUsers.show',compact('usuario'));
+    }
 }
 
