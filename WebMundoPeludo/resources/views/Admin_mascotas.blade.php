@@ -52,55 +52,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>001</td>
-      <td>Perro</td>
-      <td>Criolla</td>
-      <td>1</td>
-      <td>Sano</td>
-      <td>si</td>
-      <td>Macho</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-    </tr>
-
-    <tr>
-      <td>003</td>
-      <td>Gato</td>
-      <td>Siames</td>
-      <td>.5</td>
-      <td>Sano</td>
-      <td>si</td>
-      <td>Hembra</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-
-    </tr>
-      <td>004</td>
-      <td>Gato</td>
-      <td>Ejipcio</td>
-      <td>.9</td>
-      <td>Sano</td>
-      <td>si</td>
-      <td>Macho</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-    </tr>
+      @foreach ($mascotas as $mascota)
+        <tr>
+            <td>00{{$mascota->id}}</td>
+            <td>{{$mascota->especie}}</td>
+            <td>{{$mascota->raza}}</td>
+            <td>{{$mascota->edad}} meses</td>
+            <td>{{$mascota->condicion_salud}}</td>
+            <td>{{$mascota->vacunado}}</td>
+            <td>{{$mascota->sexo}}</td>
+            <td><span class="material-icons-outlined">refresh</span></td>
+            <td><span class="material-icons-outlined">delete</span></td>
+        </tr>
+       @endforeach
   </tbody>
 </table>
 </div>

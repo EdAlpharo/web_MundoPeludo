@@ -23,7 +23,7 @@ class PostController extends Controller
 
         $usuario->save();
 
-        return redirect()->route('AdminUsers');
+        return redirect()->route('actUser');
         }
 
     public function registro_mascota(Request $request){
@@ -39,7 +39,7 @@ class PostController extends Controller
 
 
         $mascota->save();
-        return redirect()->route('AdminMascotas');
+        return redirect()->route('actMascota');
 
         }
 
@@ -54,15 +54,8 @@ class PostController extends Controller
 
 
         $articulo->save();
-        return redirect()->route('AdminArticulos');
+        return redirect()->route('actArticulo');
 
         }
-
-    public function show($id){
-
-        $usuarios = usuario::find($id);
-
-        return view('AdminUsers.show',compact('usuario'));
-    }
 }
 

@@ -45,54 +45,22 @@
       <th scope="col">Descripción</th>
       <th scope="col">Precio</th>
       <th scope="col">Cantidad</th>
-      <th scope="col">Eliminar</th>
       <th scope="col">Actualizar</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>001</td>
-      <td>Collar</td>
-      <td>Para perro pequeño</td>
-      <td>$120.00</td>
-      <td>5</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-    </tr>
-
-    <tr>
-      <td>003</td>
-      <td>Wiskas</td>
-      <td>lata de 60gr</td>
-      <td>$25.00</td>
-      <td>12</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-
-    </tr>
-      <td>004</td>
-      <td>Pelota de juego</td>
-      <td>Pelota para perro</td>
-      <td>$42.00</td>
-      <td>15</td>
-      <td><span class="material-icons-outlined">
-delete
-</span>
-</span>
-</span></td>
-      <td><span class="material-icons-outlined">
-task_alt</td>
-    </tr>
+    @foreach ($articulos as $articulo)
+        <tr>
+            <td>{{$articulo->id}}</td>
+            <td>{{$articulo->articulo}}</td>
+            <td>{{$articulo->descripcion}}</td>
+            <td>${{$articulo->precio}}.00</td>
+            <td>{{$articulo->cantidad}} piezas</td>
+            <td><span class="material-icons-outlined">refresh</span></td>
+            <td><span class="material-icons-outlined">delete</span></td>
+        </tr>
+       @endforeach
   </tbody>
 </table>
 </div>

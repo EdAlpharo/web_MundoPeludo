@@ -42,14 +42,28 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Nombre Completo</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido Paterno</th>
+      <th scope="col">Apellido Materno</th>
+      <th scope="col">Correo</th>
       <th scope="col">Contraseña</th>
-      <th scope="col">Departamento</th>
-      <th scope="col">Eliminar</th>
       <th scope="col">Actualizar</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
+        @foreach ($usuarios as $usuario)
+        <tr>
+            <td>00{{$usuario->id}}</td>
+            <td>{{$usuario->nombre}}</td>
+            <td>{{$usuario->aPaterno}}</td>
+            <td>{{$usuario->aMaterno}}</td>
+            <td>{{$usuario->email}}</td>
+            <td>{{$usuario->pass}}</td>
+            <td><span class="material-icons-outlined">refresh</span></td>
+            <td><span class="material-icons-outlined">delete</span></td>
+        </tr>
+       @endforeach
 
   </tbody>
 </table>

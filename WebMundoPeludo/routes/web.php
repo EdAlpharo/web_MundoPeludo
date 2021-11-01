@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\controladorLogin;
+use App\Http\Controllers\getController;
 
 
 /*
@@ -22,11 +23,6 @@ Route::get('/', [controladorLogin::class,'index']);
 
 Route::get('inicio', ['as'=> 'inicio', function () {
     return view('inicio');
-}]);
-
-
-Route::get('Admin_users', ['as'=> 'AdminUsers', function () {
-    return view('Admin_users');
 }]);
 
 
@@ -60,14 +56,6 @@ Route::get('estadisticasArticulos', ['as'=> 'estArticulos', function () {
     return view('estadisticas_articulos');
 }]);
 
-Route::get('Admin_mascotas', ['as'=> 'AdminMascotas', function () {
-    return view('Admin_mascotas');
-}]);
-
-Route::get('Admin_articulos', ['as'=> 'AdminArticulos', function () {
-    return view('Admin_articulos');
-}]);
-
 Route::get('Solicitar_mascota', ['as'=> 'SolicitarMascota', function () {
     return view('solicitar_mascota');
 }]);
@@ -81,4 +69,10 @@ Route::get('Solicitar_articulo', ['as'=> 'SolicitarArticulo', function () {
 Route::post('nuevoUsuario',[PostController::class, 'registro_usuario'])->name('nuevoUsuario.registro_usuario');
 Route::post('nuevoArticulo',[PostController::class, 'registro_articulo'])->name('nuevoArticulo.registro_articulo');
 Route::post('nuevaMascota',[PostController::class, 'registro_mascota'])->name('nuevaMascota.registro_mascota');
+/*FIN*/
+
+/*RUTAS DE RECUPERACION DE DATOS DE BD*/
+Route::get('usuarios','App\Http\Controllers\getController@recuperar_usuario' )->name('actUser');
+Route::get('mascotas','App\Http\Controllers\getController@recuperar_mascota' )->name('actMascota');
+Route::get('articulos','App\Http\Controllers\getController@recuperar_articulo' )->name('actArticulo');
 /*FIN*/
