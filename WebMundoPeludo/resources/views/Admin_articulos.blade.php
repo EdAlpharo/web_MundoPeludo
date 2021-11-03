@@ -52,17 +52,21 @@
   <tbody>
     @foreach ($articulos as $articulo)
         <tr>
-            <td>{{$articulo->id}}</td>
+            <td>00{{$articulo->id}}</td>
             <td>{{$articulo->articulo}}</td>
             <td>{{$articulo->descripcion}}</td>
             <td>${{$articulo->precio}}.00</td>
             <td>{{$articulo->cantidad}} piezas</td>
-            <td><span class="material-icons-outlined">refresh</span></td>
-            <td><span class="material-icons-outlined">delete</span></td>
+            <td><span type="button" class="material-icons-outlined" href="">update</span></td>
+            <td><span type= "button" class="material-icons-outlined">delete</span></td>
         </tr>
        @endforeach
   </tbody>
 </table>
 </div>
 </div>
+
+
+
+
 @stop

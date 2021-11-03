@@ -47,8 +47,8 @@
       <th scope="col">Condicion de salud</th>
       <th scope="col">Vacunado</th>
       <th scope="col">Sexo</th>
-      <th scope="col">Eliminar</th>
       <th scope="col">Actualizar</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>

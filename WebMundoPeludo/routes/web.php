@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\controladorLogin;
 use App\Http\Controllers\getController;
-
+use App\Http\Controllers\updateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,4 +75,8 @@ Route::post('nuevaMascota',[PostController::class, 'registro_mascota'])->name('n
 Route::get('usuarios','App\Http\Controllers\getController@recuperar_usuario' )->name('actUser');
 Route::get('mascotas','App\Http\Controllers\getController@recuperar_mascota' )->name('actMascota');
 Route::get('articulos','App\Http\Controllers\getController@recuperar_articulo' )->name('actArticulo');
+/*FIN*/
+
+/*RUTAS DE EDICION DE REGISTROS*/
+Route::get('articulo/{id?}/edit','App\Http\Controllers\updateController@get_articulo' )->name('editAtriculo.get_articulo');
 /*FIN*/
