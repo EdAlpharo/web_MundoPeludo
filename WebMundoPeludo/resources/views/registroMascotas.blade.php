@@ -19,51 +19,60 @@
       <img src="img/logo1.png" width="60" height="60" /></center>
 
 
-      <form class="contenedorform2 mt-4" action="{{route('nuevaMascota.registro_mascota')}}" method="POST">
-
+      <form class="contenedorform2 mt-4" action="datosMascota" action="{{route('nuevaMascota.registro_mascota')}}" method="POST">
+        @if (session()->has('mensaje'))
+            <h5 style="color: blue">{{ session('mensaje') }}</h5>
+        @endif
 
         <div class="form-group" style="padding: 5px">
-            
+
              @csrf
 
               <left>
            <label><FONT COLOR="white">Especie: </FONT>  </label>
-           <input type="" class="" id="txtEspecie" name="especie" placeholder="Ingrese la especie del animal" style="WIDTH: auto;">
+           <input type="" class="" id="txtEspecie" name="especie" value="{{ old('especie') }}" placeholder="Ingrese la especie del animal" style="WIDTH: auto;">
+           <label style="color: red">{{ $errors -> first('especie') }}</label>
+              </left>
               </ñ>
         </div>
 
         <div class="form-group" style="padding: 5px">
               <left>
            <label><FONT COLOR="white">Raza: </FONT>  </label>
-           <input type="" class="" id="txtRaza" name="raza" placeholder="Ingrese la raza del animal" style="WIDTH: auto;">
+           <input id="txtRaza" name="raza" name="raza" value="{{ old('raza') }}" placeholder="Ingrese la raza del animal" style="WIDTH: auto;">
+              <label style="color: red">{{ $errors -> first('raza') }}</label>
               </left>
         </div>
 
         <div class="form-group" style="padding: 5px">
               <left>
            <label><FONT COLOR="white">Edad: </FONT>  </label>
-           <input type="" class="" id="txtEdad" name="edad" placeholder="Ingrese la edad del animal" style="WIDTH: auto;">
+           <input id="txtEdad" name="edad" value="{{ old('edad') }}"  placeholder="Ingrese la edad del animal" style="WIDTH: auto;">
+                <label style="color: red">{{ $errors -> first('edad') }}</label>
               </left>
         </div>
 
         <div class="form-group" style="padding: 10px">
               <left>
            <label><FONT COLOR="white">Condición de salud: </FONT>  </label>
-           <input type="" class="" id="txtCondicion" name="condicion_salud" placeholder="Ingrese si existe alguna condición del animal" style="WIDTH: auto;">
+           <input id="txtCondicion" name="condicion_salud" value="{{ old('condicion_salud') }}"  placeholder="Ingrese si existe alguna condición del animal" style="WIDTH: auto;">
+                <label style="color: red">{{ $errors -> first('condicion_salud') }}</label>
               </left>
         </div>
 
         <div class="form-group" style="padding: 10px">
               <left>
            <label><FONT COLOR="white">Vacunado: </FONT>  </label>
-           <input type="" class="" id="txtVacunado" name="vacunado" placeholder="Indique si ha recibido las vacunas" style="WIDTH: auto;">
+           <input type="" class="" id="txtVacunado" name="vacunado" value="{{ old('vacunado') }}"  placeholder="Indique si ha recibido las vacunas" style="WIDTH: auto;">
+                <label style="color: red">{{ $errors -> first('vacunado') }}</label>
               </left>
         </div>
 
         <div class="form-group" style="padding: 10px">
               <left>
            <label><FONT COLOR="white">Sexo: </FONT>  </label>
-           <input type="" class="" id="txtSexo" name="sexo"  placeholder="Indique si es hembra o macho" style="WIDTH: auto;">
+           <input type="" class="" id="txtSexo" name="sexo"  value="{{ old('sexo') }}"  placeholder="Indique si es hembra o macho" style="WIDTH: auto;">
+                <label style="color: red">{{ $errors -> first('sexo') }}</label>
               </left>
         </div>
             <center><button class="btnAgregar" type="submit">Agregar registro</button></center>

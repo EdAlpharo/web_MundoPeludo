@@ -19,35 +19,43 @@
       <center>
       <img src="img/logo2.png" width="60" height="60" /></center>
 
-      <form class="contenedorform2 mt-4" action="{{route('nuevoArticulo.registro_articulo')}}" method="POST">
+      <form class="contenedorform2 mt-4" action="datosArticulo" action="{{route('nuevoArticulo.registro_articulo')}}"  method="POST">
+
+        @if (session()->has('mensaje'))
+            <h5 style="color: blue">{{ session('mensaje') }}</h5>
+        @endif
 
         <div class="form-group" style="padding: 0.5cm">
 
             @csrf
               <left>
            <label><FONT COLOR="WHITE"><b>Articulo: </FONT></label>
-           <input type="" class="" id="txtArticulo" name="articulo" placeholder="Ingrese el nombre del artículo" style="WIDTH: auto;">
+           <input id="txtArticulo" name="articulo" value="{{ old('articulo') }}" placeholder="Ingrese el nombre del artículo" style="WIDTH: auto;">
+           <label style="color: red">{{ $errors -> first('articulo') }}</label>
            </left><br>
         </div>
 
         <div class="form-group" style="padding: 0.5cm">
               <left>
            <label><FONT COLOR="WHITE">Descripción:</FONT></label>
-           <input type="" class="" id="txtDescripcion" name="descripcion" placeholder="Ingrese la descripción del artículo" style="WIDTH: auto;">
-              </left><br>
+           <input id="txtDescripcion" name="descripcion" value="{{ old('descripcion') }}" placeholder="Ingrese la descripción del artículo" style="WIDTH: auto;">
+              <label style="color: red">{{ $errors -> first('descripcion') }}</label>
+        </left><br>
         </div>
 
         <div class="form-group" style="padding: 0.5cm">
               <left>
            <label><FONT COLOR="white">Precio: </FONT></label>
-           <input type="" class="" id="txtPrecio" name="precio" placeholder="Ingrese el precio" style="WIDTH: auto;">
+           <input id="txtPrecio" name="precio" value="{{ old('precio') }}" placeholder="Ingrese el precio" style="WIDTH: auto;">
+              <label style="color: red">{{ $errors -> first('precio') }}</label>
               </left><br>
         </div>
 
         <div class="form-group" style="padding: 0.5cm">
               <left>
            <label><FONT COLOR="WHITE">Existencia:</FONT></label>
-           <input type="" class="" id="txtExistencia" name="cantidad" placeholder="Indique la cantidad disponible" style="WIDTH: auto;">
+           <input id="txtExistencia" name="cantidad" value="{{ old('cantidad')}}" placeholder="Indique la cantidad disponible" style="WIDTH: auto;">
+                <label style="color: red">{{ $errors -> first('cantidad') }}</label>
               </left>
         </div>
 

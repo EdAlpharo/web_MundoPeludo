@@ -30,6 +30,7 @@ Route::get('registroArticulos', ['as'=> 'NArticulos', function () {
     return view('registroArticulos');
 }]);
 
+Route::post('datosArticulo',['as'=>'validacionArticulo','uses'=>'App\Http\Controllers\validacionesControler@recibirArticulo']);
 
 Route::get('carritos_compras', ['as'=> 'Carritoscompras', function () {
     return view('carritos_compras');
@@ -40,9 +41,13 @@ Route::get('registroMascotas', ['as'=> 'NMascotas', function () {
     return view('registroMascotas');
 }]);
 
+Route::post('datosMascota',['as'=>'validacionMascota','uses'=>'App\Http\Controllers\validacionesControler@recibirMascota']);
+
 Route::get('registroUsuarios', ['as'=> 'NUsuarios', function () {
     return view('registroUsuarios');
 }]);
+
+Route::post('datosUsuario',['as'=>'validacionUsuario','uses'=>'App\Http\Controllers\validacionesControler@recibirUsuario']);
 
 Route::get('estadisticasMascotas', ['as'=> 'estMascotas', function () {
     return view('estadisticas_mascotas');
