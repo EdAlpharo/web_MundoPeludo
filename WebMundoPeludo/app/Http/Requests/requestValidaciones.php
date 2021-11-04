@@ -31,7 +31,7 @@ class requestValidaciones extends FormRequest
             'especie' => 'required|max:50',
             'raza' => 'required|max:50',
             'edad' => 'required|numeric',
-            'sexo' => 'required|max:50',
+            'sexo' => 'required|max:10',
             'condicion_salud' => 'required|max:200',
             'vacunado' => 'required|max:3',
             'nombre' => 'required|max:50',
