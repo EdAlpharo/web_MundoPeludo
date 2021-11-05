@@ -18,15 +18,8 @@
       <img src="img/logo3.png" width="60" height="60" /></center>
 
 
-
-      <form class="contenedorform2 mt-4" action="datosUsuario" action="{{route('nuevoUsuario.registro_usuario')}}" method="POST">
-
-        @if (session()->has('mensaje'))
-            <h5 style="color: blue">{{ session('mensaje') }}</h5>
-        @endif
-
+      <form class="contenedorform2 mt-4" action="{{route('nuevoUsuario.registro_usuario')}}" method="POST">
         <div class="form-group" style="padding: 15px">
-
 
              @csrf
 

@@ -19,10 +19,13 @@
 
 <link rel="stylesheet" href="<?php echo asset('css/Admin_user.css')?>" type="text/css">
 
+@include('sweetalert::alert')
 
 <div class="container">
 <h3 style="text-align: center; padding-top:25px">Administración de usuarios</h3>
-<form class="form-search content-search navbar-form" action="" style="align: center">
+
+
+<form class="form-search content-search navbar-form" action="datosUsuario" style="align: center">
     <div class="input-group" style="padding: 25px">
         <form class="d-flex">
         <input class="me-2" placeholder="Ingrese el usuario a buscar" size="25">
@@ -33,8 +36,8 @@
     <div style="padding-left: 25px">
         <a class="btn btn-outline-success button" href="{{route('NUsuarios')}}">Nuevo Usuario</a>
     </div>
-
 </form>
+
 
 
 <div class="container-fluid" style="padding: 25px">

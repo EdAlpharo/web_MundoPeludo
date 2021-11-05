@@ -19,7 +19,7 @@
       <center>
       <img src="img/logo2.png" width="60" height="60" /></center>
 
-      <form class="contenedorform2 mt-4" action="datosArticulo" action="{{route('nuevoArticulo.registro_articulo')}}"  method="POST">
+      <form class="contenedorform2 mt-4" action="{{route('nuevoArticulo.registro_articulo')}}"  method="POST">
 
         @if (session()->has('mensaje'))
             <h5 style="color: blue">{{ session('mensaje') }}</h5>

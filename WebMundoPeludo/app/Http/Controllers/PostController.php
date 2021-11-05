@@ -6,11 +6,21 @@ use App\Models\usuario;
 use App\Models\mascota;
 use App\Models\articulo;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class PostController extends Controller
 {
     public function registro_usuario(Request $request){
+
+        $request->validate([
+            'nombre' => 'required|max:50',
+            'aPaterno' => 'required|max:50',
+            'aMaterno' => 'required|max:50',
+            'email' => 'email',
+            'pass' => 'required|max:50',
+            'cpass' => 'required|max:50',
+        ]);
 
         $usuario = new usuario();
 
@@ -23,10 +33,21 @@ class PostController extends Controller
 
         $usuario->save();
 
+        alert()->success('Alta de usuarios','El usuario '.$usuario->nombre.' '.$usuario->aPaterno.' con ID 00'.$usuario->id.' fué dado de alta con exito');
+
         return redirect()->route('actUser');
         }
 
     public function registro_mascota(Request $request){
+
+        $request->validate([
+            'especie' => 'required|max:50',
+            'raza' => 'required|max:50',
+            'edad' => 'required|numeric',
+            'sexo' => 'required|max:50',
+            'condicion_salud' => 'required|max:200',
+            'vacunado' => 'required|max:3',
+        ]);
 
         $mascota = new mascota();
 
@@ -39,11 +60,20 @@ class PostController extends Controller
 
 
         $mascota->save();
+        alert()->success('Alta de mascotas','La Mascota '.$mascota->especie.' '.$mascota->raza.' con ID 00'.$mascota->id.' fué dado de alta con exito');
+
         return redirect()->route('actMascota');
 
         }
 
     public function registro_articulo(Request $request){
+
+         $request->validate([
+            'articulo' => 'required|max:50',
+            'descripcion' => 'required|max:250',
+            'precio' => 'required|numeric',
+            'cantidad' => 'required|numeric',
+        ]);
 
         $articulo = new articulo();
 
@@ -54,6 +84,9 @@ class PostController extends Controller
 
 
         $articulo->save();
+
+        alert()->success('Alta de Artículos','El artículo '.$articulo->articulo.' con ID 00'.$articulo->id.' fué dado de alta con exito');
+
         return redirect()->route('actArticulo');
 
         }

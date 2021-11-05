@@ -18,7 +18,7 @@
       rel="stylesheet">
 
 <link rel="stylesheet" href="<?php echo asset('css/Admin_user.css')?>" type="text/css">
-
+@include('sweetalert::alert')
 
 <div class="container">
 <h3 style="text-align: center; padding-top:25px">Administración de articulos de venta</h3>

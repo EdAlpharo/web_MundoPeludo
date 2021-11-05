@@ -18,7 +18,10 @@
       rel="stylesheet">
 
 <link rel="stylesheet" href="<?php echo asset('css/Admin_user.css')?>" type="text/css">
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
 
+@include('sweetalert::alert')
 
 <div class="container">
 <h3 style="text-align: center; padding-top:25px">Administración de mascotas</h3>
