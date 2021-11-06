@@ -1,6 +1,7 @@
 @extends('base')
 
 @section('contenido')
+
     <!-- https://material.io/resources/icons/?style=baseline -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">

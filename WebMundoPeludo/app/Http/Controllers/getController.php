@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class getController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function recuperar_usuario(){
 
         $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass')->get();

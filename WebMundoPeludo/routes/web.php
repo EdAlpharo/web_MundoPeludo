@@ -6,6 +6,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\controladorLogin;
 use App\Http\Controllers\getController;
 use App\Http\Controllers\updateController;
+use App\Http\Controllers\authController;
+use App\Http\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,59 +23,41 @@ use App\Http\Controllers\updateController;
 
 Route::get('/', [controladorLogin::class,'index']);
 
-Route::get('inicio', ['as'=> 'inicio', function () {
-    return view('inicio');
+Route::get('login', ['as'=> 'login', function () {
+    return view('login');
+}]);
+
+Route::get('registro', ['as'=> 'registro', function () {
+    return view('registro');
 }]);
 
 
-Route::get('registroArticulos', ['as'=> 'NArticulos', function () {
-    return view('registroArticulos');
-}]);
+Route::get('inicio', [authController::class,'inicio'])->name('inicio');
 
-Route::post('datosArticulo',['as'=>'validacionArticulo','uses'=>'App\Http\Controllers\validacionesControler@recibirArticulo']);
+Route::get('registroArticulos', [authController::class, 'registroArticulos'])->name('NArticulos');
 
-Route::get('carritos_compras', ['as'=> 'Carritoscompras', function () {
-    return view('carritos_compras');
-}]);
+Route::get('carritos_compras', [authController::class, 'carrito_compras'])->name('Carritoscompras');
 
+Route::get('registroMascotas', [authController::class, 'registroMascotas'])->name('NMascotas');
 
-Route::get('registroMascotas', ['as'=> 'NMascotas', function () {
-    return view('registroMascotas');
-}]);
+Route::get('registroUsuarios', [authController::class, 'registroUsuarios'])->name('NUsuarios');
 
-Route::post('datosMascota',['as'=>'validacionMascota','uses'=>'App\Http\Controllers\validacionesControler@recibirMascota']);
+Route::get('estadisticasMascotas', [authController::class, 'estadisticasMascotas'])->name('estMascotas');
 
-Route::get('registroUsuarios', ['as'=> 'NUsuarios', function () {
-    return view('registroUsuarios');
-}]);
+Route::get('estadisticasUsuario', [authController::class, 'estadisticasUsuario'])->name('estUsuarios');
 
-Route::post('datosUsuario',['as'=>'validacionUsuario','uses'=>'App\Http\Controllers\validacionesControler@recibirUsuario']);
+Route::get('estadisticasArticulos', [authController::class, 'estadisticasArticulos'])->name('estArticulos');
 
-Route::get('estadisticasMascotas', ['as'=> 'estMascotas', function () {
-    return view('estadisticas_mascotas');
-}]);
+Route::get('Solicitar_mascota', [authController::class, 'solicitar_mascota'])->name('SolicitarMascota');
 
-Route::get('estadisticasUsuario', ['as'=> 'estUsuarios', function () {
-    return view('estadisticas_usuarios');
-}]);
-
-Route::get('estadisticasArticulos', ['as'=> 'estArticulos', function () {
-    return view('estadisticas_articulos');
-}]);
-
-Route::get('Solicitar_mascota', ['as'=> 'SolicitarMascota', function () {
-    return view('solicitar_mascota');
-}]);
-
-Route::get('Solicitar_articulo', ['as'=> 'SolicitarArticulo', function () {
-    return view('solicitar_articulo');
-}]);
+Route::get('Solicitar_articulo', [authController::class, 'solicitar_articulo'])->name('SolicitarArticulo');
 
 
 /*RUTAS DE ENVIO DE INFORMACION A BD*/
 Route::post('nuevoUsuario',[PostController::class, 'registro_usuario'])->name('nuevoUsuario.registro_usuario');
 Route::post('nuevoArticulo',[PostController::class, 'registro_articulo'])->name('nuevoArticulo.registro_articulo');
 Route::post('nuevaMascota',[PostController::class, 'registro_mascota'])->name('nuevaMascota.registro_mascota');
+Route::post('user',[controladorLogin::class, 'registro'])->name('user.registro');
 /*FIN*/
 
 /*RUTAS DE RECUPERACION DE DATOS DE BD*/
@@ -82,6 +66,12 @@ Route::get('mascotas','App\Http\Controllers\getController@recuperar_mascota' )->
 Route::get('articulos','App\Http\Controllers\getController@recuperar_articulo' )->name('actArticulo');
 /*FIN*/
 
+
 /*RUTAS DE EDICION DE REGISTROS*/
 Route::get('articulo/{id?}/edit','App\Http\Controllers\updateController@get_articulo' )->name('editAtriculo.get_articulo');
 /*FIN*/
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

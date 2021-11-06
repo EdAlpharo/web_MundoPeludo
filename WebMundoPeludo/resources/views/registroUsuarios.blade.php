@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="css/usuarios.css">
 
-    <title>Registro de usuarios</title>
+    <title>Mundo Peludo|Registro de usuarios</title>
   </head>
   <body>
     <br>

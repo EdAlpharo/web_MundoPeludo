@@ -11,6 +11,12 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function registro_usuario(Request $request){
 
         $request->validate([

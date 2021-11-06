@@ -1,13 +1,18 @@
 @extends('base')
 
 @section('contenido')
+@if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+@endif
 
 <br>
 
 <link rel="stylesheet" href="<?php echo asset('css/inicio.css')?>" type="text/css">
 
 <div class="container">
-  
+
   <ul class="slider">
     <li id="slide1">
       <img src="{{ asset('img/carrusel1.jpg')}}"/>
@@ -19,7 +24,7 @@
     <img src="{{ asset('img/carrusel3.jpg')}}"/>
     </li>
   </ul>
-  
+
   <ul class="menu">
     <li>
       <a href="#slide1">1</a>
@@ -31,7 +36,7 @@
       <a href="#slide3">3</a>
     </li>
   </ul>
-  
+
 </div>
 <br>
 <br>
