@@ -29,4 +29,7 @@ class getController extends Controller
         $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo')->get();
         return view('Admin_mascotas',['mascotas'=>$mascotas]);
     }
+    public function buscarUsuario(){
+        
+    }
 }

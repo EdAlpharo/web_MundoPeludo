@@ -39,7 +39,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Ingresar') }}</div>
+                <div class="card-header" style="text-align: center; font-size: 26px;">{{ __('Ingresar') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

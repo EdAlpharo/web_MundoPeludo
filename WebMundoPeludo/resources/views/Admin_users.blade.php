@@ -19,6 +19,8 @@
 
 <link rel="stylesheet" href="<?php echo asset('css/Admin_user.css')?>" type="text/css">
 
+<title>Mundo Peludo|Usuarios</title>
+
 @include('sweetalert::alert')
 
 <div class="container">

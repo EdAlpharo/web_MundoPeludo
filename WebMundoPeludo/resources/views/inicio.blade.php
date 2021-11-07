@@ -6,7 +6,7 @@
         {{ session('status') }}
     </div>
 @endif
-
+<title>Mundo Peludo|Inicio</title>
 <br>
 
 <link rel="stylesheet" href="<?php echo asset('css/inicio.css')?>" type="text/css">

@@ -28,7 +28,7 @@ Route::get('login', ['as'=> 'login', function () {
 }]);
 
 Route::get('registro', ['as'=> 'registro', function () {
-    return view('registro');
+    return view('auth.register');
 }]);
 
 

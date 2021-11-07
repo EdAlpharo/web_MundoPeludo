@@ -22,6 +22,8 @@
 <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">
 
+<title>Mundo Peludo|Mascotas</title>
+
 @include('sweetalert::alert')
 
 <div class="container">
