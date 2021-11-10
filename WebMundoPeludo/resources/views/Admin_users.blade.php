@@ -43,6 +43,8 @@
 
 
 <div class="container-fluid" style="padding: 25px">
+    <h4 style="text-align: center">Empleados</h4>
+    <br>
     <table class="table table-success">
   <thead>
     <tr>
@@ -65,6 +67,41 @@
             <td>{{$usuario->aMaterno}}</td>
             <td>{{$usuario->email}}</td>
             <td>{{$usuario->pass}}</td>
+            <td><span class="material-icons-outlined">refresh</span></td>
+            <td><span class="material-icons-outlined">delete</span></td>
+        </tr>
+       @endforeach
+
+  </tbody>
+</table>
+
+</div>
+<br>
+<div class="container-fluid" style="padding: 25px">
+    <h4 style="text-align: center">Usuarios - clientes</h4>
+    <br>
+    <table class="table table-success">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo Electronico</th>
+      <th scope="col">contraseña</th>
+      <th scope="col">Fecha creación</th>
+      <th scope="col">Fecha actualización</th>
+      <th scope="col">Actualizar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach ($users as $user)
+        <tr>
+            <td>00{{$user->id}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->password}}</td>
+            <td>{{$user->created_at}}</td>
+            <td>{{$user->updated_at}}</td>
             <td><span class="material-icons-outlined">refresh</span></td>
             <td><span class="material-icons-outlined">delete</span></td>
         </tr>

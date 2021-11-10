@@ -76,7 +76,7 @@
 <p class="box2"><img src="{{ asset('img/mscar1.jpg')}}"/></p>
 
 <div id="texto1"><center>Proyecto de la UPQ</center></div>
-<p class="box1"><img  src="{{ asset('img/upq.jpg')}}"/></p>
+<p class="box1"><img  src="{{ asset('img/logo.svg')}}"/></p>
 </div>
 
 

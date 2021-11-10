@@ -18,7 +18,8 @@ class getController extends Controller
     public function recuperar_usuario(){
 
         $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass')->get();
-        return view('Admin_users',['usuarios'=>$usuarios]);
+        $users = \DB::table('users')->select('id','name','email','password','created_at','updated_at')->get();
+        return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
     }
     public function recuperar_articulo(){
         $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad')->get();
@@ -30,6 +31,6 @@ class getController extends Controller
         return view('Admin_mascotas',['mascotas'=>$mascotas]);
     }
     public function buscarUsuario(){
-        
+
     }
 }
