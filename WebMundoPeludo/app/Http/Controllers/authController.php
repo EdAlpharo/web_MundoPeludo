@@ -54,4 +54,8 @@ class authController extends Controller
     {
         return view('solicitar_articulo');
     }
+    public function solicitarAdopcion()
+    {
+        return view('adopcion');
+    }
 }

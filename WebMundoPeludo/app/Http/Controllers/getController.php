@@ -30,7 +30,28 @@ class getController extends Controller
         $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo')->get();
         return view('Admin_mascotas',['mascotas'=>$mascotas]);
     }
-    public function buscarUsuario(){
+    public function recuperar_usuario_id($id){
+        $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass')->where('id',$id)->get();
+        $users = \DB::table('users')->select('id','name','email','password','created_at','updated_at')->where('id',$id)->get();
+        return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
+    }
 
+    public function recuperar_mascota_id($id){
+        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo')->where('id',$id)->get();
+        return view('Admin_mascotas',['mascotas'=>$mascotas]);
+    }
+    public function estadisticas_mascota(){
+        $total_mascotas = \DB::table('mascotas')
+             ->select(\DB::raw('count(*) as cantidad, especie'))
+             ->groupBy('especie')
+             ->get();
+        return view('estadisticas_mascotas',['total_mascotas'=>$total_mascotas]);
+    }
+    public function estadisticas_articulo(){
+        $total_articulos = \DB::table('articulos')
+             ->select(\DB::raw('count(*) as cantidad, articulo'))
+             ->groupBy('articulo')
+             ->get();
+        return view('estadisticas_articulos',['total_articulos'=>$total_articulos]);
     }
 }

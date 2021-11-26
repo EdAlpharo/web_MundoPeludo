@@ -56,7 +56,7 @@
                 </div>
                 </div>
                 <div class="dropdown btn">
-                <a class="dropbtn button btn" href="">ADOPCIÓN</a>
+                <a class="dropbtn button btn" href="{{route('SolicitarAdopcion')}}">ADOPCIÓN</a>
                 </div>
                 <div class="dropdown btn">
                 <a class="dropbtn button btn" href="{{route('SolicitarArticulo')}}">COMPRAS</a>

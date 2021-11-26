@@ -42,8 +42,6 @@ Route::get('registroMascotas', [authController::class, 'registroMascotas'])->nam
 
 Route::get('registroUsuarios', [authController::class, 'registroUsuarios'])->name('NUsuarios');
 
-Route::get('estadisticasMascotas', [authController::class, 'estadisticasMascotas'])->name('estMascotas');
-
 Route::get('estadisticasUsuario', [authController::class, 'estadisticasUsuario'])->name('estUsuarios');
 
 Route::get('estadisticasArticulos', [authController::class, 'estadisticasArticulos'])->name('estArticulos');
@@ -52,6 +50,7 @@ Route::get('Solicitar_mascota', [authController::class, 'solicitar_mascota'])->n
 
 Route::get('Solicitar_articulo', [authController::class, 'solicitar_articulo'])->name('SolicitarArticulo');
 
+Route::get('solicitarAdopcion', [authController::class, 'solicitarAdopcion'])->name('SolicitarAdopcion');
 
 /*RUTAS DE ENVIO DE INFORMACION A BD*/
 Route::post('nuevoUsuario',[PostController::class, 'registro_usuario'])->name('nuevoUsuario.registro_usuario');
@@ -64,6 +63,8 @@ Route::post('user',[controladorLogin::class, 'registro'])->name('user.registro')
 Route::get('usuarios','App\Http\Controllers\getController@recuperar_usuario' )->name('actUser');
 Route::get('mascotas','App\Http\Controllers\getController@recuperar_mascota' )->name('actMascota');
 Route::get('articulos','App\Http\Controllers\getController@recuperar_articulo' )->name('actArticulo');
+Route::get('estadisticas/mascotas', 'App\Http\Controllers\getController@estadisticas_mascota')->name('estMascotas');
+Route::get('estadisticas/articulos', 'App\Http\Controllers\getController@estadisticas_articulo')->name('estArticulos');
 /*FIN*/
 
 
@@ -75,3 +76,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('charts', 'HomeController@chartjs');
