@@ -12,6 +12,9 @@
 <div class="container" style="padding: 20px">
     <p>Estadisticas de Articulos</p>
 </div>
+<div class="container mb-4 d-flex justify-content-end">
+    <a class="btn btn-primary" href="{{route('reporteArticulos')}}">Generar Reporte PDF</a>
+</div>
 
 <div class="container">
     <div class="row col-6">

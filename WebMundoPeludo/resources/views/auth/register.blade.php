@@ -79,6 +79,14 @@
                         </div>
                         <br>
                         <div class="form-group row">
+                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('sexo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="sexo" type="text" class="form-control" name="sexo">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">

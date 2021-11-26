@@ -8,6 +8,7 @@ use App\Http\Controllers\getController;
 use App\Http\Controllers\updateController;
 use App\Http\Controllers\authController;
 use App\Http\Middleware\Authenticate;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,10 +43,6 @@ Route::get('registroMascotas', [authController::class, 'registroMascotas'])->nam
 
 Route::get('registroUsuarios', [authController::class, 'registroUsuarios'])->name('NUsuarios');
 
-Route::get('estadisticasUsuario', [authController::class, 'estadisticasUsuario'])->name('estUsuarios');
-
-Route::get('estadisticasArticulos', [authController::class, 'estadisticasArticulos'])->name('estArticulos');
-
 Route::get('Solicitar_mascota', [authController::class, 'solicitar_mascota'])->name('SolicitarMascota');
 
 Route::get('Solicitar_articulo', [authController::class, 'solicitar_articulo'])->name('SolicitarArticulo');
@@ -65,6 +62,7 @@ Route::get('mascotas','App\Http\Controllers\getController@recuperar_mascota' )->
 Route::get('articulos','App\Http\Controllers\getController@recuperar_articulo' )->name('actArticulo');
 Route::get('estadisticas/mascotas', 'App\Http\Controllers\getController@estadisticas_mascota')->name('estMascotas');
 Route::get('estadisticas/articulos', 'App\Http\Controllers\getController@estadisticas_articulo')->name('estArticulos');
+Route::get('estadisticas/usuarios', 'App\Http\Controllers\getController@estadisticas_usuario')->name('estUsuarios');
 /*FIN*/
 
 
@@ -77,3 +75,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('charts', 'HomeController@chartjs');
+
+/*RUTAS PRA GENERAR PDF*/
+Route::get('/imprimir/reporteMascotasPDF', 'App\Http\Controllers\PdfController@reporteMascotas')->name('reporteMascotas');
+Route::get('/imprimir/reporteArticulosPDF', 'App\Http\Controllers\PdfController@reporteArticulos')->name('reporteArticulos');
+Route::get('/imprimir/reporteUsuariosPDF', 'App\Http\Controllers\PdfController@reporteUsuarios')->name('reporteUsuarios');
+/*FIN*/

@@ -20,6 +20,7 @@
 
 <nav class="navbar-nav navbar-expand-sm navbar-light bg-light navbar" id="topheader">
     <h1>Sistema administrativo</h1>
+    <h5>Usuario: {{ auth()->user()->name }}</h5>
     <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
         <div class="container-fluid">
             <img src="{{ asset('img/logo.jpg')}}" class="logo" style="width: 125px; height: 125px; float:center; display:block;margin:0 auto 0 auto; border-radius:10%">
@@ -38,13 +39,6 @@
                     <a href="{{route('actMascota')}}">Mascotas</a>
                     <a href="{{route('actArticulo')}}">Artículos</a>
                     <a href="{{route('actUser')}}">Usuarios</a>
-                </div>
-                </div>
-                <div class="dropdown btn">
-                <button class="dropbtn">INVENTARIO</button>
-                <div class="dropdown-content">
-                    <a href="#">Mascotas</a>
-                    <a href="#">Artículos</a>
                 </div>
                 </div>
                 <div class="dropdown btn">

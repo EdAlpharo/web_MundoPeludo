@@ -18,7 +18,7 @@ class getController extends Controller
     public function recuperar_usuario(){
 
         $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass')->get();
-        $users = \DB::table('users')->select('id','name','email','password','created_at','updated_at')->get();
+        $users = \DB::table('users')->select('id','name','email','sexo','password','created_at','updated_at')->get();
         return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
     }
     public function recuperar_articulo(){
@@ -36,10 +36,6 @@ class getController extends Controller
         return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
     }
 
-    public function recuperar_mascota_id($id){
-        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo')->where('id',$id)->get();
-        return view('Admin_mascotas',['mascotas'=>$mascotas]);
-    }
     public function estadisticas_mascota(){
         $total_mascotas = \DB::table('mascotas')
              ->select(\DB::raw('count(*) as cantidad, especie'))
@@ -53,5 +49,12 @@ class getController extends Controller
              ->groupBy('articulo')
              ->get();
         return view('estadisticas_articulos',['total_articulos'=>$total_articulos]);
+    }
+    public function estadisticas_usuario(){
+        $total_usuarios = \DB::table('users')
+             ->select(\DB::raw('count(*) as cantidad, sexo'))
+             ->groupBy('sexo')
+             ->get();
+        return view('estadisticas_usuarios',['total_usuarios'=>$total_usuarios]);
     }
 }

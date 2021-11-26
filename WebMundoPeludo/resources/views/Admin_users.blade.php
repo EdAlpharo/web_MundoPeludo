@@ -48,14 +48,14 @@
     <table class="table table-success">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido Paterno</th>
-      <th scope="col">Apellido Materno</th>
-      <th scope="col">Correo</th>
-      <th scope="col">Contraseña</th>
-      <th scope="col">Actualizar</th>
-      <th scope="col">Eliminar</th>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido Paterno</th>
+        <th scope="col">Apellido Materno</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Contraseña</th>
+        <th scope="col">Actualizar</th>
+        <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -83,14 +83,15 @@
     <table class="table table-success">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Correo Electronico</th>
-      <th scope="col">contraseña</th>
-      <th scope="col">Fecha creación</th>
-      <th scope="col">Fecha actualización</th>
-      <th scope="col">Actualizar</th>
-      <th scope="col">Eliminar</th>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">sexo</th>
+        <th scope="col">Correo Electronico</th>
+        <th scope="col">contraseña</th>
+        <th scope="col">Fecha creación</th>
+        <th scope="col">Fecha actualización</th>
+        <th scope="col">Actualizar</th>
+        <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -98,6 +99,7 @@
         <tr>
             <td>00{{$user->id}}</td>
             <td>{{$user->name}}</td>
+            <td>{{$user->sexo}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->password}}</td>
             <td>{{$user->created_at}}</td>
