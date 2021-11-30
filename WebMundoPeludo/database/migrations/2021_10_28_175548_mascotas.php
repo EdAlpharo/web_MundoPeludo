@@ -25,6 +25,8 @@ class Mascotas extends Migration
             $table->string('sexo',64);
             $table->string('imagen')->nullable();
             $table->timestamps();
+            $table->index('imagen');
+            $table->string('status',64)->default('disponible');
         });
 
 

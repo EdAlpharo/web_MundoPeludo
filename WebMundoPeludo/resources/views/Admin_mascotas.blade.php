@@ -54,6 +54,7 @@
         <th scope="col">Vacunado</th>
         <th scope="col">Sexo</th>
         <th scope="col">Foto</th>
+        <th scope="col">Estatus</th>
         <th scope="col">Actualizar</th>
         <th scope="col">Eliminar</th>
     </tr>
@@ -68,9 +69,8 @@
             <td>{{$mascota->condicion_salud}}</td>
             <td>{{$mascota->vacunado}}</td>
             <td>{{$mascota->sexo}}</td>
-            <td>
-                <img src="/img/mascotas/{{$mascota->imagen}}" alt="" width="100px" height="100px">
-            </td>
+            <td><img src="/img/mascotas/{{$mascota->imagen}}" alt="" width="100px" height="100px"></td>
+            <td>{{$mascota->status}}</td>
             <td><a class="material-icons-outlined" href="{{route('mascotasEdit',$mascota->id)}}">refresh</a></td>
 
             <td>

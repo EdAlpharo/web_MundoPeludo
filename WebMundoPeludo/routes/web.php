@@ -45,11 +45,9 @@ Route::get('registroMascotas', [authController::class, 'registroMascotas'])->nam
 
 Route::get('registroUsuarios', [authController::class, 'registroUsuarios'])->name('NUsuarios');
 
-Route::get('Solicitar_mascota', [authController::class, 'solicitar_mascota'])->name('SolicitarMascota');
-
 Route::get('Solicitar_articulo', [authController::class, 'solicitar_articulo'])->name('SolicitarArticulo');
 
-Route::get('solicitarAdopcion', [authController::class, 'solicitarAdopcion'])->name('SolicitarAdopcion');
+Route::get('solicitarAdopcion', [getController::class, 'mascota_adoptar'])->name('SolicitarAdopcion');
 
 /*RUTAS DE ENVIO DE INFORMACION A BD*/
 Route::post('nuevoUsuario',[PostController::class, 'registro_usuario'])->name('nuevoUsuario.registro_usuario');

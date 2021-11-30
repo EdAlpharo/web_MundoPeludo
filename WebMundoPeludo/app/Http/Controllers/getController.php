@@ -27,7 +27,7 @@ class getController extends Controller
 
     }
     public function recuperar_mascota(){
-        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','imagen')->get();
+        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','imagen','status')->get();
         return view('Admin_mascotas',['mascotas'=>$mascotas]);
     }
     public function recuperar_usuario_id($id){
@@ -56,5 +56,9 @@ class getController extends Controller
              ->groupBy('sexo')
              ->get();
         return view('estadisticas_usuarios',['total_usuarios'=>$total_usuarios]);
+    }
+    public function mascota_adoptar(){
+        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','imagen')->get();
+        return view('adopcion',['mascotas'=>$mascotas]);
     }
 }

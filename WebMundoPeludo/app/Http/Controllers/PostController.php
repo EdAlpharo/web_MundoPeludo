@@ -54,6 +54,7 @@ class PostController extends Controller
             'condicion_salud' => 'required|max:200',
             'vacunado' => 'required|max:3',
             'imagen' => 'required|image|mimes:jpeg,jpg,png,svg',
+            'status' => 'required|max:50',
         ]);
 
         $mascota = new mascota();
@@ -65,6 +66,7 @@ class PostController extends Controller
         $mascota->vacunado = $request->vacunado;
         $mascota->sexo = $request->sexo;
         $mascota->imagen = $request->imagen;
+        $mascota->status = $request->status;
 
          if($imagen = $request->file('imagen')){
             $rutaGuardarImg = 'img/mascotas/';

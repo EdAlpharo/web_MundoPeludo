@@ -71,8 +71,15 @@
         <div class="form-group" style="padding: 10px">
               <left>
            <label><FONT COLOR="white">Sexo: </FONT>  </label>
-           <input type="" class="" id="txtSexo" name="sexo"  value="{{ old('sexo') }}"  placeholder="Indique si es hembra o macho" style="WIDTH: auto;">
+           <input type="" class="" id="txtSexo" name="sexo"  value="{{ old('sexo') }}" value="disponible" placeholder="Indique si es hembra o macho" style="WIDTH: auto;">
                 <label style="color: red">{{ $errors -> first('sexo') }}</label>
+              </left>
+        </div>
+        <div class="form-group" style="padding: 10px">
+              <left>
+           <label><FONT COLOR="white">Estatus: </FONT>  </label>
+           <input type="" class="" id="txtEstatus" name="status"  value="{{ old('status') }}"  placeholder="Indique si esta disponible" style="WIDTH: auto;">
+                <label style="color: red">{{ $errors -> first('status') }}</label>
               </left>
         </div>
         <div class="form-group" style="padding: 10px">

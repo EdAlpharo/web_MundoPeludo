@@ -46,10 +46,6 @@ class authController extends Controller
     {
         return view('estadisticas_articulos');
     }
-    public function solicitar_mascota()
-    {
-        return view('solicitar_mascota');
-    }
     public function solicitar_articulo()
     {
         return view('solicitar_articulo');
