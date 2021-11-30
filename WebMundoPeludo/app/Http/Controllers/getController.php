@@ -22,12 +22,12 @@ class getController extends Controller
         return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
     }
     public function recuperar_articulo(){
-        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad')->get();
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','imagen')->get();
         return view('Admin_articulos',['articulos'=>$articulos]);
 
     }
     public function recuperar_mascota(){
-        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo')->get();
+        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','imagen')->get();
         return view('Admin_mascotas',['mascotas'=>$mascotas]);
     }
     public function recuperar_usuario_id($id){

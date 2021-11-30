@@ -19,7 +19,7 @@
       <img src="img/logo1.png" width="60" height="60" /></center>
 
 
-      <form class="contenedorform2 mt-4" action="{{route('nuevaMascota.registro_mascota')}}" method="POST">
+      <form class="contenedorform2 mt-4" action="{{route('nuevaMascota.registro_mascota')}}" method="POST" enctype="multipart/form-data">
         @if (session()->has('mensaje'))
             <h5 style="color: blue">{{ session('mensaje') }}</h5>
         @endif
@@ -75,12 +75,35 @@
                 <label style="color: red">{{ $errors -> first('sexo') }}</label>
               </left>
         </div>
+        <div class="form-group" style="padding: 10px">
+            <left>
+              <label><FONT COLOR="white">imagen: </FONT>  </label>
+               <div class="form-group">
+                    <img id="imagenSeleccionada" style="max-height: 100px">
+               </div>
+                <input type="file" name="imagen" id="imagen" class="btn-primary">
+            </left>
+        </div>
+
             <center><button class="btnAgregar" type="submit">Agregar registro</button></center>
           </form>
       </div>
 
 
     </div>
+
+    <script>
+        $(document).ready(function(e){
+            $("#imagen").change(function(e){
+                var file = e.target.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $("#imagenSeleccionada").attr("src", e.target.result);
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -48,6 +48,7 @@
       <th scope="col">Descripción</th>
       <th scope="col">Precio</th>
       <th scope="col">Cantidad</th>
+      <th scope="col">imagen</th>
       <th scope="col">Actualizar</th>
       <th scope="col">Eliminar</th>
     </tr>
@@ -60,6 +61,9 @@
             <td>{{$articulo->descripcion}}</td>
             <td>${{$articulo->precio}}.00</td>
             <td>{{$articulo->cantidad}} piezas</td>
+            <td>
+                <img src="/img/mascotas/{{$articulo->imagen}}" alt="" width="100px" height="100px">
+            </td>
             <td><span type="button" class="material-icons-outlined" href="">update</span></td>
             <td><span type= "button" class="material-icons-outlined">delete</span></td>
         </tr>

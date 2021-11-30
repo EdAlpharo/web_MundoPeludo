@@ -9,6 +9,8 @@ use App\Http\Controllers\updateController;
 use App\Http\Controllers\authController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\deleteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +69,11 @@ Route::get('estadisticas/usuarios', 'App\Http\Controllers\getController@estadist
 
 
 /*RUTAS DE EDICION DE REGISTROS*/
-Route::get('articulo/{id?}/edit','App\Http\Controllers\updateController@get_articulo' )->name('editAtriculo.get_articulo');
+Route::get('editarMascota/{id}','App\Http\Controllers\deleteController@delete_mascota')->name('mascotasEdit');
+/*FIN*/
+
+/*RUTAS DE ELIMINACION DE REGISTROS*/
+Route::delete('mascotas/{id}',[deleteController::class, 'delete_mascota'])->name('mascotasDelete');
 /*FIN*/
 
 Auth::routes();

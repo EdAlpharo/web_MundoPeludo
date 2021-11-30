@@ -59,12 +59,35 @@
               </left>
         </div>
 
+        <div class="form-group" style="padding: 10px">
+            <left>
+              <label><FONT COLOR="white">imagen: </FONT>  </label>
+               <div class="form-group">
+                    <img id="imagenSeleccionada" style="max-height: 100px">
+               </div>
+                <input type="file" name="imagen" id="imagen" class="btn-primary">
+            </left>
+        </div>
+
             <center><button class="btnAgregar" type="submit">Agregar registro</button></center><br>
           </form>
       </div>
 
 
 </div>
+
+<script>
+        $(document).ready(function(e){
+            $("#imagen").change(function(e){
+                var file = e.target.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $("#imagenSeleccionada").attr("src", e.target.result);
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
 
 
 

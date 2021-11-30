@@ -13,17 +13,21 @@ class Mascotas extends Migration
      */
     public function up()
     {
+
+
         Schema::create('mascotas', function (Blueprint $table) {
-            $table->id()->unique();
+            $table->id()->unique()->autoIncrement();
             $table->string('especie',100);
             $table->string('raza',100);
             $table->integer('edad');
             $table->string('condicion_salud',240);
             $table->string('vacunado',64);
             $table->string('sexo',64);
-
+            $table->string('imagen')->nullable();
             $table->timestamps();
         });
+
+
     }
 
     /**

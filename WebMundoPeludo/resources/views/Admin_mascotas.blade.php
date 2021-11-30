@@ -46,15 +46,16 @@
     <table class="table table-success">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Especie</th>
-      <th scope="col">Raza</th>
-      <th scope="col">Edad</th>
-      <th scope="col">Condicion de salud</th>
-      <th scope="col">Vacunado</th>
-      <th scope="col">Sexo</th>
-      <th scope="col">Actualizar</th>
-      <th scope="col">Eliminar</th>
+        <th scope="col">ID</th>
+        <th scope="col">Especie</th>
+        <th scope="col">Raza</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Condicion de salud</th>
+        <th scope="col">Vacunado</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Foto</th>
+        <th scope="col">Actualizar</th>
+        <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -67,14 +68,29 @@
             <td>{{$mascota->condicion_salud}}</td>
             <td>{{$mascota->vacunado}}</td>
             <td>{{$mascota->sexo}}</td>
-            <td><span class="material-icons-outlined">refresh</span></td>
-            <td><span class="material-icons-outlined">delete</span></td>
+            <td>
+                <img src="/img/mascotas/{{$mascota->imagen}}" alt="" width="100px" height="100px">
+            </td>
+            <td><a class="material-icons-outlined" href="{{route('mascotasEdit',$mascota->id)}}">refresh</a></td>
+
+            <td>
+                <form action="{{route('mascotasDelete',$mascota->id)}}" method="POST" class="eliminarMascota">
+                @csrf
+                @method('DELETE')
+                <button class="material-icons-outlined" type="submit">delete</button>
+            </form>
+
+            </td>
+
         </tr>
        @endforeach
   </tbody>
 </table>
-</div>
 
 </div>
 
+</div>
+<script>
+
+</script>
 @stop

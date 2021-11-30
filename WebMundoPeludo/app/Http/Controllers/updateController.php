@@ -10,18 +10,12 @@ use Illuminate\Http\User;
 
 class updateController extends Controller
 {
-    public function get_usuario(){
-
-    }
-    public function get_mascota(){
-
-    }
-    public function get_articulo($id){
-        $articulos=articulo::whereid($id)->firstOrFail();
-        return view('edit_articulo',['articulos'=>$articulos]);
-
-
-    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    
     public function update_usuario(){
 
     }

@@ -53,6 +53,7 @@ class PostController extends Controller
             'sexo' => 'required|max:50',
             'condicion_salud' => 'required|max:200',
             'vacunado' => 'required|max:3',
+            'imagen' => 'required|image|mimes:jpeg,jpg,png,svg',
         ]);
 
         $mascota = new mascota();
@@ -63,6 +64,15 @@ class PostController extends Controller
         $mascota->condicion_salud = $request->condicion_salud;
         $mascota->vacunado = $request->vacunado;
         $mascota->sexo = $request->sexo;
+        $mascota->imagen = $request->imagen;
+
+         if($imagen = $request->file('imagen')){
+            $rutaGuardarImg = 'img/mascotas/';
+            $imagenMascota = date('YmdHis') . $imagen->getClientOriginalName();
+            $imagen->move($rutaGuardarImg, $imagenMascota);
+            $mascota['imagen'] = $imagenMascota;
+        }
+
 
 
         $mascota->save();
@@ -79,6 +89,7 @@ class PostController extends Controller
             'descripcion' => 'required|max:250',
             'precio' => 'required|numeric',
             'cantidad' => 'required|numeric',
+            'imagen' => 'required|image|mimes:jpeg,jpg,png,svg',
         ]);
 
         $articulo = new articulo();
@@ -87,6 +98,14 @@ class PostController extends Controller
         $articulo->descripcion = $request->descripcion;
         $articulo->precio = $request->precio;
         $articulo->cantidad = $request->cantidad;
+        $articulo->imagen = $request->imagen;
+
+            if($imagen = $request->file('imagen')){
+                $rutaGuardarImg = 'img/articulos/';
+                $imagenArticulo = date('YmdHis') . $imagen->getClientOriginalName();
+                $imagen->move($rutaGuardarImg, $imagenArticulo);
+                $articulo['imagen'] = $imagenArticulo;
+            }
 
 
         $articulo->save();

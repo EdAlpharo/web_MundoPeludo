@@ -19,6 +19,7 @@ class Articulos extends Migration
             $table->string('descripcion',100);
             $table->integer('precio');
             $table->integer('cantidad');
+            $table->string('imagen')->nullable();
             $table->timestamps();
         });
     }
