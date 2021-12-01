@@ -22,7 +22,7 @@ class getController extends Controller
         return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
     }
     public function recuperar_articulo(){
-        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','imagen')->get();
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','imagen','estatus')->get();
         return view('Admin_articulos',['articulos'=>$articulos]);
 
     }
@@ -44,12 +44,20 @@ class getController extends Controller
         return view('estadisticas_mascotas',['total_mascotas'=>$total_mascotas]);
     }
     public function estadisticas_articulo(){
-        $total_articulos = \DB::table('articulos')
+        $articulos_disponibles = \DB::table('articulos')
              ->select(\DB::raw('count(*) as cantidad, articulo'))
+             ->where('estatus','=','disponible')
              ->groupBy('articulo')
              ->get();
-        return view('estadisticas_articulos',['total_articulos'=>$total_articulos]);
+        $articulos_vendidos = \DB::table('articulos')
+                ->select(\DB::raw('count(*) as total, articulo'))
+                ->where('estatus','=','vendido')
+                ->groupBy('articulo')
+                ->get();
+
+        return view('estadisticas_articulos',['articulos_disponibles'=>$articulos_disponibles,'articulos_vendidos'=>$articulos_vendidos]);
     }
+
     public function estadisticas_usuario(){
         $total_usuarios = \DB::table('users')
              ->select(\DB::raw('count(*) as cantidad, sexo'))
@@ -58,7 +66,15 @@ class getController extends Controller
         return view('estadisticas_usuarios',['total_usuarios'=>$total_usuarios]);
     }
     public function mascota_adoptar(){
-        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','imagen')->get();
+        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','imagen')
+            ->where('status','=','disponible')
+            ->get();
         return view('adopcion',['mascotas'=>$mascotas]);
+    }
+    public function articulo_comprar(){
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','imagen','estatus')
+            ->where('estatus','=','disponible')
+            ->get();
+        return view('solicitar_articulo',['articulos'=>$articulos]);
     }
 }

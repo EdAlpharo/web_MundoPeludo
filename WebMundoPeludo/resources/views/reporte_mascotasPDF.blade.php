@@ -36,6 +36,7 @@
         <th>Condición de salud</th>
         <th>Vacunado</th>
         <th>Sexo</th>
+        <th>Estatus</th>
     </thead>
     <br><br><br>
     <tbody>
@@ -49,6 +50,7 @@
             <td>{{$mascota->condicion_salud}}</td>
             <td>{{$mascota->vacunado}}</td>
             <td>{{$mascota->sexo}}</td>
+            <td>{{$mascota->status}}</td>
         </tr>
         @endforeach
     </tr>

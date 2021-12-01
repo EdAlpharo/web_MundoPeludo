@@ -8,7 +8,7 @@ use PDF;
 class PdfController extends Controller
 {
     public function reporteMascotas(){
-        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo')->get();
+        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','status')->get();
         $view =  \View::make('reporte_mascotasPDF', compact('mascotas'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
@@ -16,8 +16,9 @@ class PdfController extends Controller
     }
 
     public function reporteArticulos(){
-        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad')->get();
-        $view =  \View::make('reporte_articulosPDF', compact('articulos'))->render();
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','estatus')->get();
+        $compras = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','estatus')->get();
+        $view =  \View::make('reporte_articulosPDF', compact('articulos','compras'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('ReporteArticulos.pdf');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\usuario;
 use App\Models\mascota;
 use App\Models\articulo;
+use Illuminate\Http\User;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -92,6 +93,7 @@ class PostController extends Controller
             'precio' => 'required|numeric',
             'cantidad' => 'required|numeric',
             'imagen' => 'required|image|mimes:jpeg,jpg,png,svg',
+            'estatus' => 'required|max:50',
         ]);
 
         $articulo = new articulo();
@@ -101,6 +103,7 @@ class PostController extends Controller
         $articulo->precio = $request->precio;
         $articulo->cantidad = $request->cantidad;
         $articulo->imagen = $request->imagen;
+        $articulo->estatus = $request->estatus;
 
             if($imagen = $request->file('imagen')){
                 $rutaGuardarImg = 'img/articulos/';

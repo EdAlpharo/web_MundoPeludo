@@ -18,4 +18,17 @@ class deleteController extends Controller
 
 
     }
+    public function delete_usuario($id){
+        $usuario = usuario::find($id);
+        $usuario->delete();
+        alert()->success('Registro eliminado con éxito');
+        return redirect()->route('actUsuario');
+    }
+    
+    public function delete_articulo($id){
+        $articulo = articulo::find($id);
+        $articulo->delete();
+        alert()->success('Registro eliminado con éxito');
+        return redirect()->route('actArticulo');
+    }
 }

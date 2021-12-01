@@ -45,7 +45,7 @@ Route::get('registroMascotas', [authController::class, 'registroMascotas'])->nam
 
 Route::get('registroUsuarios', [authController::class, 'registroUsuarios'])->name('NUsuarios');
 
-Route::get('Solicitar_articulo', [authController::class, 'solicitar_articulo'])->name('SolicitarArticulo');
+Route::get('Solicitar_articulo', [getController::class, 'articulo_comprar'])->name('SolicitarArticulo');
 
 Route::get('solicitarAdopcion', [getController::class, 'mascota_adoptar'])->name('SolicitarAdopcion');
 
@@ -72,6 +72,13 @@ Route::get('editarMascota/{id}','App\Http\Controllers\deleteController@delete_ma
 
 /*RUTAS DE ELIMINACION DE REGISTROS*/
 Route::delete('mascotas/{id}',[deleteController::class, 'delete_mascota'])->name('mascotasDelete');
+Route::delete('articulos/{id}',[deleteController::class, 'delete_articulo'])->name('articulosDelete');
+/*FIN*/
+
+/*ACTUALIZACIÓN DE REGISTROS*/
+Route::get('articuloU/{id}',[updateController::class, 'get_articulo'])->name('articulosUpdate');
+Route::post('articuloAct/{id}',[updateController::class, 'update_articulo'])->name('articuloUpdated');
+
 /*FIN*/
 
 Auth::routes();

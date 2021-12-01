@@ -59,6 +59,14 @@
               </left>
         </div>
 
+        <div class="form-group" style="padding: 0.5cm">
+              <left>
+           <label><FONT COLOR="WHITE">Estatus:</FONT></label>
+           <input id="txtExistencia" name="estatus" value="{{ old('estatus')}}" placeholder="Indique si está o no disponible" style="WIDTH: auto;">
+                <label style="color: red">{{ $errors -> first('estatus') }}</label>
+              </left>
+        </div>
+
         <div class="form-group" style="padding: 10px">
             <left>
               <label><FONT COLOR="white">imagen: </FONT>  </label>

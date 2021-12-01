@@ -20,6 +20,7 @@ class Articulos extends Migration
             $table->integer('precio');
             $table->integer('cantidad');
             $table->string('imagen')->nullable();
+            $table->string('estatus',64)->default('disponible');
             $table->timestamps();
         });
     }

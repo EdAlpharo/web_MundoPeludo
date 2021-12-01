@@ -33,6 +33,7 @@
             <th scope="col">Artículo</th>
             <th scope="col">Descripción</th>
             <th scope="col">Precio</th>
+            <th scope="col">estatus</th>
             <th scope="col">Cantidad</th>
     </thead>
     <br><br><br>
@@ -44,12 +45,15 @@
                     <td>{{$articulo->articulo}}</td>
                     <td>{{$articulo->descripcion}}</td>
                     <td>${{$articulo->precio}}.00</td>
+                    <td>{{$articulo->estatus}}</td>
                     <td>{{$articulo->cantidad}} piezas</td>
                 </tr>
             @endforeach
         </tr>
     </tbody>
 </table>
+<br>
+
 <h5>generado el {{ date('Y-m-d H:i:s') }} por {{ auth()->user()->name }}</h5>
 </body>
 </html>

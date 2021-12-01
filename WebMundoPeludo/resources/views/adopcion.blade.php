@@ -2,7 +2,9 @@
 @section('contenido')
 
 <div class="container">
-    <h5>Adopciones</h5>
+<div class="container" style="padding: 20px">
+    <p style="text-align: center; font-size:32px">Adopciones</p>
+</div>
     @foreach ($mascotas->chunk(5) as $chunk)
         <div class="row">
             @foreach ($chunk as $mascota)
