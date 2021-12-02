@@ -21,7 +21,13 @@
                 <li class="list-group-item">{{$mascota->sexo}}</li>
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link">Adoptar</a>
+                 <td>
+                <form action="{{route('adoptado',$mascota->id)}}" method="POST">
+                @csrf
+                @method('POST')
+                <button class="button btn-dark" type="submit">Adoptar</button>
+            </form>
+            </td>
             </div>
         </div>
     @endforeach

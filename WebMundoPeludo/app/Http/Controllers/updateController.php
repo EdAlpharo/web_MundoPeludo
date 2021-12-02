@@ -21,7 +21,32 @@ class updateController extends Controller
 
 
     }
-    public function update_mascota(){
+    public function get_mascota($id){
+        $mascotas = mascota::find($id);
+        return view('edit_mascotas', ['mascotas' => $mascotas]);
+    }
+
+    public function update_mascota(Request $request, $id){
+        $mascota = mascota::findOrFail($id);
+        $mascota->especie = $request->input('especie');
+        $mascota->raza = $request->input('raza');
+        $mascota->edad = $request->input('edad');
+        $mascota->condicion_salud = $request->input('condicion_salud');
+        $mascota->sexo = $request->input('sexo');
+        $mascota->vacunado = $request->input('vacunado');
+        $mascota->status = $request->input('status');
+        $mascota->imagen = $request->input('imagen');
+
+        if($imagen = $request->file('imagen')){
+                $rutaGuardarImg = 'img/mascotas/';
+                $imagenMascota = date('YmdHis') . $imagen->getClientOriginalName();
+                $imagen->move($rutaGuardarImg, $imagenMascota);
+                $mascota['imagen'] = $imagenMascota;
+            }
+
+        $mascota->save();
+        alert()->success('Actualizacion de registros','La mascota '.$mascota->especie.' raza: '.$mascota->raza.' con ID 00'.$mascota->id.' fué actualizada con exito');
+        return redirect()->route('actMascota');
 
     }
     public function get_articulo($id){
@@ -47,8 +72,15 @@ class updateController extends Controller
         $articulo->save();
         alert()->success('Actualizacion de registros','El artículo '.$articulo->articulo.' con ID 00'.$articulo->id.' fué actualizado con exito');
         return redirect()->route('actArticulo');
-
-
+    }
+    public function changeStatus_adoptado($id){
+        $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','imagen','status')
+        ->where('id','=',$id)
+        ->get();
+        $mascota = mascota::findOrFail($id);
+        $mascota->status = 'adoptado';
+        $mascota->save();
+        return view('confirmarAdopcion',['mascotas'=>$mascotas]);
     }
 
 }

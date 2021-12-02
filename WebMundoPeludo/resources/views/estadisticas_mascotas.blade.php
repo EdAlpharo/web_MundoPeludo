@@ -10,7 +10,7 @@
 
 
 <div class="container" style="padding: 20px">
-    <p>Estadisticas de mascotas</p>
+    <h3 style="text-align: center">Estadisticas de mascotas</h3>
 </div>
 <div class="container mb-4 d-flex justify-content-end">
     <a class="btn btn-primary" href="{{route('reporteMascotas')}}">Generar Reporte PDF</a>
@@ -18,11 +18,18 @@
 
 <div class="container">
     <div class="row col-6">
+        <h5>Mascotas totales</h5>
     <canvas id="mascotasTotales"></canvas>
     </div>
     <div class="row col-6">
+        <h5>Mascotas Adoptadas</h5>
         <canvas id="mascotasAdoptadas"></canvas>
     </div>
+    <div class="row col-6">
+        <h5>Mascotas Disponibles</h5>
+        <canvas id="mascotasDisponibles"></canvas>
+    </div>
+
 </div>
 
 <script>
@@ -34,7 +41,7 @@ const myChart = new Chart(ctx, {
             echo "'".$mascota->especie."',";
         } ?>],
         datasets: [{
-            label: 'Disponibles',
+            label: 'Totales',
             data: [<?php foreach ($total_mascotas as $mascota) {
                 echo $mascota->cantidad.",";
             } ?>],
@@ -72,22 +79,22 @@ const ctx2 = document.getElementById('mascotasAdoptadas').getContext('2d');
 const myChart2 = new Chart(ctx2, {
     type: 'bar',
     data: {
-        labels: [<?php foreach ($total_mascotas as $mascota) {
+        labels: [<?php foreach ($mascotas_adoptadas as $mascota) {
             echo "'".$mascota->especie."',";
         } ?>],
         datasets: [{
             label: 'Adoptadas',
-            data: [<?php foreach ($total_mascotas as $mascota) {
+            data: [<?php foreach ($mascotas_adoptadas as $mascota) {
                 echo $mascota->cantidad.",";
             } ?>],
 
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(0, 255, 42, 0.5)',
+                'rgba(54, 162, 208, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -99,6 +106,7 @@ const myChart2 = new Chart(ctx2, {
             ],
             borderWidth: 1
 
+
         }]
     },
     options: {
@@ -109,6 +117,50 @@ const myChart2 = new Chart(ctx2, {
         }
     }
 });
+
+const ctx3 = document.getElementById('mascotasDisponibles').getContext('2d');
+const myChart3 = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        labels: [<?php foreach ($mascotas_disponibles as $mascota) {
+            echo "'".$mascota->especie."',";
+        } ?>],
+        datasets: [{
+            label: 'Disponibles',
+            data: [<?php foreach ($mascotas_disponibles as $mascota) {
+                echo $mascota->cantidad.",";
+            } ?>],
+
+            backgroundColor: [
+                'rgba(255, 72, 190, 0.5)',
+                'rgba(54, 162, 208, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+
+
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
 
 
 </script>

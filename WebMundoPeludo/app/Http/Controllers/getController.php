@@ -41,9 +41,24 @@ class getController extends Controller
              ->select(\DB::raw('count(*) as cantidad, especie'))
              ->groupBy('especie')
              ->get();
-        return view('estadisticas_mascotas',['total_mascotas'=>$total_mascotas]);
+        $mascotas_adoptadas = \DB::table('mascotas')
+                ->select(\DB::raw('count(*) as cantidad, especie'))
+                ->where('status','adoptado')
+                ->groupBy('especie')
+                ->get();
+        $mascotas_disponibles = \DB::table('mascotas')
+                ->select(\DB::raw('count(*) as cantidad, especie'))
+                ->where('status','disponible')
+                ->groupBy('especie')
+                ->get();
+        return view('estadisticas_mascotas',['total_mascotas'=>$total_mascotas,'mascotas_adoptadas'=>$mascotas_adoptadas,'mascotas_disponibles'=>$mascotas_disponibles]);
     }
+
     public function estadisticas_articulo(){
+        $total_articulos = \DB::table('articulos')
+             ->select(\DB::raw('count(*) as cantidad, articulo'))
+             ->groupBy('articulo')
+             ->get();
         $articulos_disponibles = \DB::table('articulos')
              ->select(\DB::raw('count(*) as cantidad, articulo'))
              ->where('estatus','=','disponible')
@@ -55,7 +70,7 @@ class getController extends Controller
                 ->groupBy('articulo')
                 ->get();
 
-        return view('estadisticas_articulos',['articulos_disponibles'=>$articulos_disponibles,'articulos_vendidos'=>$articulos_vendidos]);
+        return view('estadisticas_articulos',['articulos_disponibles'=>$articulos_disponibles,'articulos_vendidos'=>$articulos_vendidos,'total_articulos'=>$total_articulos]);
     }
 
     public function estadisticas_usuario(){

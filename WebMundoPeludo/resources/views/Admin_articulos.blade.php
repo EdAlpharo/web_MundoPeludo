@@ -66,7 +66,7 @@
             <td>
                 <img src="/img/articulos/{{$articulo->imagen}}" alt="" width="100px" height="100px">
             </td>
-            <td><a type="button" class="material-icons-outlined" href="{{route('articulosUpdate',$articulo->id)}}">update</a></td>
+            <td><a type="button" class="material-icons-outlined" href="{{route('articulosUpdate',$articulo->id)}}">edit</a></td>
              <td>
                 <form action="{{route('articulosDelete',$articulo->id)}}" method="POST" class="eliminarArticulo">
                 @csrf

@@ -71,8 +71,7 @@
             <td>{{$mascota->sexo}}</td>
             <td><img src="/img/mascotas/{{$mascota->imagen}}" alt="" width="100px" height="100px"></td>
             <td>{{$mascota->status}}</td>
-            <td><a class="material-icons-outlined" href="{{route('mascotasEdit',$mascota->id)}}">edit</a></td>
-
+            <td><a type="button" class="material-icons-outlined" href="{{route('mascotasUpdate',$mascota->id)}}">edit</a></td>
             <td>
                 <form action="{{route('mascotasDelete',$mascota->id)}}" method="POST" class="eliminarMascota">
                 @csrf

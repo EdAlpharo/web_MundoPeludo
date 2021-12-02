@@ -65,6 +65,9 @@ Route::get('estadisticas/articulos', 'App\Http\Controllers\getController@estadis
 Route::get('estadisticas/usuarios', 'App\Http\Controllers\getController@estadisticas_usuario')->name('estUsuarios');
 /*FIN*/
 
+/*RUTAS PARA ADOPCIÓN*/
+Route::post('adopcion/Info/{id}', [updateController::class, 'changeStatus_adoptado'])->name('adoptado');
+/*FIN*/
 
 /*RUTAS DE EDICION DE REGISTROS*/
 Route::get('editarMascota/{id}','App\Http\Controllers\deleteController@delete_mascota')->name('mascotasEdit');
@@ -78,6 +81,8 @@ Route::delete('articulos/{id}',[deleteController::class, 'delete_articulo'])->na
 /*ACTUALIZACIÓN DE REGISTROS*/
 Route::get('articuloU/{id}',[updateController::class, 'get_articulo'])->name('articulosUpdate');
 Route::post('articuloAct/{id}',[updateController::class, 'update_articulo'])->name('articuloUpdated');
+Route::get('mascotaU/{id}',[updateController::class, 'get_mascota'])->name('mascotasUpdate');
+Route::post('mascotaAct/{id}',[updateController::class, 'update_mascota'])->name('mascotaUpdated');
 
 /*FIN*/
 

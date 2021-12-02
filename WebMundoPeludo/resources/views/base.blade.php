@@ -17,7 +17,6 @@
 
 </head>
 <body>
-
 <nav class="navbar-nav navbar-expand-sm navbar-light bg-light navbar" id="topheader">
     <h1>Sistema administrativo</h1>
     <h5>Usuario: {{ auth()->user()->name }}</h5>
