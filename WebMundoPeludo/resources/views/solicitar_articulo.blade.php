@@ -6,7 +6,7 @@
     <h3 style="text-align: center">Solicitar Artículo</h3>
 
     <div class="container">
-    <h5>Adopciones</h5>
+    <h4>Articulos Disponibles</h4>
     @foreach ($articulos->chunk(5) as $chunk)
         <div class="row">
             @foreach ($chunk as $articulo)
@@ -21,7 +21,13 @@
                 <li class="list-group-item">Cantidad: {{$articulo->cantidad}}</li>
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link">Agregar al carrito</a>
+                 <td>
+                <form action="{{route('carrito',$articulo->id)}}" method="POST">
+                    @csrf
+                    @method('POST')
+                    <button class="button btn-dark" type="submit">Agregar al carrito</button>
+                </form>
+            </td>
             </div>
         </div>
     @endforeach
@@ -33,7 +39,7 @@
 <br><br><br>
 
     <div class="container">
-        <a class="btn btn-primary" href="{{route('Carritoscompras')}}">Carrito de compras</a>
+        <a class="btn btn-primary" href="{{route('carritoCompras')}}">Carrito de compras</a>
     </div>
 </div>
 

@@ -92,4 +92,11 @@ class getController extends Controller
             ->get();
         return view('solicitar_articulo',['articulos'=>$articulos]);
     }
+    public function articulo_carrito(){
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','imagen','estatus')
+            ->where('estatus','=','en_carrito')
+            ->get();
+        return view('carrito_compras',['articulos'=>$articulos]);
+    }
+    
 }

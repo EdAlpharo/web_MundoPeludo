@@ -23,10 +23,10 @@
             <div class="card-body">
                  <td>
                 <form action="{{route('adoptado',$mascota->id)}}" method="POST">
-                @csrf
-                @method('POST')
-                <button class="button btn-dark" type="submit">Adoptar</button>
-            </form>
+                    @csrf
+                    @method('POST')
+                    <button class="button btn-dark" type="submit">Adoptar</button>
+                </form>
             </td>
             </div>
         </div>

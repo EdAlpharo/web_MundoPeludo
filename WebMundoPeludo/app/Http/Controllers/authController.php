@@ -21,10 +21,6 @@ class authController extends Controller
         return view('registroArticulos');
     }
 
-    public function carrito_compras()
-    {
-        return view('carritos_compras');
-    }
 
     public function registroMascotas()
     {

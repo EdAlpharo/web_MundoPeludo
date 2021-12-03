@@ -39,7 +39,6 @@ Route::get('inicio', [authController::class,'inicio'])->name('inicio');
 
 Route::get('registroArticulos', [authController::class, 'registroArticulos'])->name('NArticulos');
 
-Route::get('carritos_compras', [authController::class, 'carrito_compras'])->name('Carritoscompras');
 
 Route::get('registroMascotas', [authController::class, 'registroMascotas'])->name('NMascotas');
 
@@ -65,8 +64,14 @@ Route::get('estadisticas/articulos', 'App\Http\Controllers\getController@estadis
 Route::get('estadisticas/usuarios', 'App\Http\Controllers\getController@estadisticas_usuario')->name('estUsuarios');
 /*FIN*/
 
-/*RUTAS PARA ADOPCIÓN*/
+/*RUTAS PARA ADOPCIÓN Y COMPRA*/
 Route::post('adopcion/Info/{id}', [updateController::class, 'changeStatus_adoptado'])->name('adoptado');
+Route::post('compra/Info/{id}', [updateController::class, 'changeStatus_vendido'])->name('compra');
+Route::post('carrito/Info/{id}', [updateController::class, 'changeStatus_carrito'])->name('carrito');
+Route::get('carrito/Info', [updateController::class, 'carrito'])->name('carritoCompras');
+Route::get('pagando', [updateController::class, 'articulo_vendido'])->name('pagando');
+Route::post('eliminar/Carito/{id}', [updateController::class, 'changeStatus_disponible'])->name('disponible');
+
 /*FIN*/
 
 /*RUTAS DE EDICION DE REGISTROS*/

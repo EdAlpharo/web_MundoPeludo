@@ -83,4 +83,43 @@ class updateController extends Controller
         return view('confirmarAdopcion',['mascotas'=>$mascotas]);
     }
 
+    public function changeStatus_carrito($id){
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','estatus','imagen')
+        ->where('id','=',$id)
+        ->get();
+        $articulo = articulo::findOrFail($id);
+        $articulo->estatus = 'en_carrito';
+        $articulo->save();
+        return redirect()->route('SolicitarArticulo');
+    }
+
+    public function changeStatus_vendido($id){
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','estatus','imagen')
+        ->where('estatus','=',$id)
+        ->get();
+        $articulo = articulo::findOrFail($id);
+        $articulo->estatus = 'vendido';
+        $articulo->save();
+        return view('confirmarCompra',['articulos'=>$articulos]);
+    }
+    public function carrito(){
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','estatus','imagen')
+        ->where('estatus','=','en_carrito')
+        ->get();
+        return view('carrito_compras',['articulos'=>$articulos]);
+    }
+    public function articulo_vendido(){
+        return view('error');
+    }
+    public function changeStatus_disponible($id){
+        $articulos = \DB::table('articulos')->select('id','articulo','descripcion','precio','cantidad','estatus','imagen')
+        ->where('estatus','=',$id)
+        ->get();
+        $articulo = articulo::findOrFail($id);
+        $articulo->estatus = 'vendido';
+        $articulo->save();
+        return view('carrito_compras',['articulos'=>$articulos]);
+    }
+
+
 }
