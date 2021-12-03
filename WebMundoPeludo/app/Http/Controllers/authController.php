@@ -21,7 +21,6 @@ class authController extends Controller
         return view('registroArticulos');
     }
 
-
     public function registroMascotas()
     {
         return view('registroMascotas');

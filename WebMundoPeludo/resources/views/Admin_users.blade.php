@@ -67,8 +67,15 @@
             <td>{{$usuario->aMaterno}}</td>
             <td>{{$usuario->email}}</td>
             <td>{{$usuario->pass}}</td>
-            <td><span class="material-icons-outlined">refresh</span></td>
-            <td><span class="material-icons-outlined">delete</span></td>
+            <td><a type="button" class="material-icons-outlined" href="{{route('usuariosUpdate',$usuario->id)}}">edit</a></td>
+            <td>
+                <form action="{{route('usuariosDelete',$usuario->id)}}" method="POST" class="eliminarUsuario">
+                @csrf
+                @method('DELETE')
+                <button class="material-icons-outlined" type="submit">delete</button>
+            </form>
+
+            </td>
         </tr>
        @endforeach
 
@@ -90,8 +97,7 @@
         <th scope="col">contraseña</th>
         <th scope="col">Fecha creación</th>
         <th scope="col">Fecha actualización</th>
-        <th scope="col">Actualizar</th>
-        <th scope="col">Eliminar</th>
+
     </tr>
   </thead>
   <tbody>
@@ -104,8 +110,6 @@
             <td>{{$user->password}}</td>
             <td>{{$user->created_at}}</td>
             <td>{{$user->updated_at}}</td>
-            <td><span class="material-icons-outlined">refresh</span></td>
-            <td><span class="material-icons-outlined">delete</span></td>
         </tr>
        @endforeach
 

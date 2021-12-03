@@ -16,11 +16,27 @@ class updateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function update_usuario(){
-
-
+    public function get_usuario($id){
+        $usuarios = usuario::find($id);
+        return view('edit_usuarios', ['usuarios' => $usuarios]);
     }
+
+
+    public function update_usuario($id, Request $request)
+    {
+        $usuario = usuario::findOrFail($id);
+        $usuario->nombre = $request->input('nombre');
+        $usuario->aPaterno = $request->input('aPaterno');
+        $usuario->aMaterno = $request->input('aMaterno');
+        $usuario->email = $request->input('email');
+        $usuario->pass = $request->input('pass');
+        $usuario->cpass = $request->input('cpass');
+        $usuario->save();
+
+        alert()->success('Usuario actualizado correctamente', 'Usuario actualizado');
+        return redirect()->route('actUser');
+    }
+
     public function get_mascota($id){
         $mascotas = mascota::find($id);
         return view('edit_mascotas', ['mascotas' => $mascotas]);

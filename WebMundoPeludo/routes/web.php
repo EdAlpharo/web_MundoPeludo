@@ -34,7 +34,6 @@ Route::get('registro', ['as'=> 'registro', function () {
     return view('auth.register');
 }]);
 
-
 Route::get('inicio', [authController::class,'inicio'])->name('inicio');
 
 Route::get('registroArticulos', [authController::class, 'registroArticulos'])->name('NArticulos');
@@ -81,6 +80,7 @@ Route::get('editarMascota/{id}','App\Http\Controllers\deleteController@delete_ma
 /*RUTAS DE ELIMINACION DE REGISTROS*/
 Route::delete('mascotas/{id}',[deleteController::class, 'delete_mascota'])->name('mascotasDelete');
 Route::delete('articulos/{id}',[deleteController::class, 'delete_articulo'])->name('articulosDelete');
+Route::delete('usuarios/{id}',[deleteController::class, 'delete_usuario'])->name('usuariosDelete');
 /*FIN*/
 
 /*ACTUALIZACIÓN DE REGISTROS*/
@@ -88,6 +88,8 @@ Route::get('articuloU/{id}',[updateController::class, 'get_articulo'])->name('ar
 Route::post('articuloAct/{id}',[updateController::class, 'update_articulo'])->name('articuloUpdated');
 Route::get('mascotaU/{id}',[updateController::class, 'get_mascota'])->name('mascotasUpdate');
 Route::post('mascotaAct/{id}',[updateController::class, 'update_mascota'])->name('mascotaUpdated');
+Route::get('usuarioU/{id}',[updateController::class, 'get_usuario'])->name('usuariosUpdate');
+Route::post('usuarioAct/{id}',[updateController::class, 'update_usuario'])->name('usuarioUpdated');
 
 /*FIN*/
 

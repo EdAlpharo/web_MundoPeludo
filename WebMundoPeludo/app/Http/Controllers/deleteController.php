@@ -22,9 +22,9 @@ class deleteController extends Controller
         $usuario = usuario::find($id);
         $usuario->delete();
         alert()->success('Registro eliminado con éxito');
-        return redirect()->route('actUsuario');
+        return redirect()->route('actUser');
     }
-    
+
     public function delete_articulo($id){
         $articulo = articulo::find($id);
         $articulo->delete();
