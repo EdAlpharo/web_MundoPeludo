@@ -33,7 +33,8 @@
             <th scope="col">Nombre</th>
             <th scope="col">Apellido Paterno</th>
             <th scope="col">Apellido Materno</th>
-            <th scope="col">correo</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Departamento</th>
     </thead>
     <br><br><br>
     <tbody>
@@ -45,6 +46,7 @@
                     <td>{{$usuario->aPaterno}}</td>
                     <td>{{$usuario->aMaterno}}</td>
                     <td>{{$usuario->email}}</td>
+                    <td>{{$usuario->departamento}}</td>
 
                 </tr>
             @endforeach

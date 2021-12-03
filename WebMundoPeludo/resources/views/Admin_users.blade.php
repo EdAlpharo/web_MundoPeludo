@@ -53,6 +53,7 @@
         <th scope="col">Apellido Paterno</th>
         <th scope="col">Apellido Materno</th>
         <th scope="col">Correo</th>
+        <th scope="col">Departamento</th>
         <th scope="col">Contraseña</th>
         <th scope="col">Actualizar</th>
         <th scope="col">Eliminar</th>
@@ -66,6 +67,7 @@
             <td>{{$usuario->aPaterno}}</td>
             <td>{{$usuario->aMaterno}}</td>
             <td>{{$usuario->email}}</td>
+            <td>{{$usuario->departamento}}</td>
             <td>{{$usuario->pass}}</td>
             <td><a type="button" class="material-icons-outlined" href="{{route('usuariosUpdate',$usuario->id)}}">edit</a></td>
             <td>

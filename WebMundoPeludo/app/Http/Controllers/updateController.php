@@ -29,6 +29,7 @@ class updateController extends Controller
         $usuario->aPaterno = $request->input('aPaterno');
         $usuario->aMaterno = $request->input('aMaterno');
         $usuario->email = $request->input('email');
+        $usuario->departamento = $request->input('departamento');
         $usuario->pass = $request->input('pass');
         $usuario->cpass = $request->input('cpass');
         $usuario->save();

@@ -21,7 +21,7 @@ class Usuarios extends Migration
             $table->string('email',100);
             $table->string('pass',64);
             $table->string('cpass',64);
-
+            $table->string('departamento',64);
             $table->timestamps();
         });
     }

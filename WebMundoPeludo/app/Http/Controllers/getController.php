@@ -17,7 +17,7 @@ class getController extends Controller
 
     public function recuperar_usuario(){
 
-        $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass')->get();
+        $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass','departamento')->get();
         $users = \DB::table('users')->select('id','name','email','sexo','password','created_at','updated_at')->get();
         return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
     }
@@ -31,7 +31,7 @@ class getController extends Controller
         return view('Admin_mascotas',['mascotas'=>$mascotas]);
     }
     public function recuperar_usuario_id($id){
-        $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass')->where('id',$id)->get();
+        $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass','departamento')->where('id',$id)->get();
         $users = \DB::table('users')->select('id','name','email','password','created_at','updated_at')->where('id',$id)->get();
         return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
     }
@@ -98,5 +98,5 @@ class getController extends Controller
             ->get();
         return view('carrito_compras',['articulos'=>$articulos]);
     }
-    
+
 }

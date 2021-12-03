@@ -57,6 +57,12 @@
            <label>email:</label>
            <input type="" class="" id="txtemail" name="email" value="{{$usuarios->email}}"  style="WIDTH: auto;">
         </div>
+
+        <div class="form-group p-2" style="padding: auto">
+           <label>departamento:</label>
+           <input type="" class="" id="txtdepa" name="departamento" value="{{$usuarios->departamento}}"  style="WIDTH: auto;">
+        </div>
+
         <div class="form-group p-2" style="padding: auto">
            <label>Contraseña:</label>
            <input type="" class="" id="txtPass" name="pass" value="{{$usuarios->pass}}"  style="WIDTH: auto;">

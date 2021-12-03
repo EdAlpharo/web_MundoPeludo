@@ -25,6 +25,7 @@ class PostController extends Controller
             'aPaterno' => 'required|max:50',
             'aMaterno' => 'required|max:50',
             'email' => 'email',
+            'departamento' => 'required|max:50',
             'pass' => 'required|max:50',
             'cpass' => 'required|max:50',
         ]);
@@ -35,6 +36,7 @@ class PostController extends Controller
         $usuario->aPaterno = $request->aPaterno;
         $usuario->aMaterno = $request->aMaterno;
         $usuario->email = $request->email;
+        $usuario->departamento = $request->departamento;
         $usuario->pass = $request->pass;
         $usuario->cpass = $request->cpass;
 

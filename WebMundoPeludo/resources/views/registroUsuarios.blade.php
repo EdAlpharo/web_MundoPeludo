@@ -54,6 +54,14 @@
               </left>
         </div>
 
+        <div class="form-group"style="padding: 15px">
+              <left>
+           <label><FONT COLOR="white" >Departamento:</FONT>  </label>
+           <input type="" class="" id="txtDepa" name="departamento"  value="{{ old('departamento') }}"  placeholder="Selecciona el departamento" style="WIDTH: auto;color:black;">
+                <label style="color: red">{{ $errors -> first('departamento') }}</label>
+              </left>
+        </div>
+
         <div class="form-group" style="padding: 15px">
               <left>
            <label><FONT COLOR="white">Contraseña: </FONT>  </label>
