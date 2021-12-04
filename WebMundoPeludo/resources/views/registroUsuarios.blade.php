@@ -55,11 +55,19 @@
         </div>
 
         <div class="form-group"style="padding: 15px">
-              <left>
-           <label><FONT COLOR="white" >Departamento:</FONT>  </label>
-           <input type="" class="" id="txtDepa" name="departamento"  value="{{ old('departamento') }}"  placeholder="Selecciona el departamento" style="WIDTH: auto;color:black;">
+            <left>
+            <label><FONT COLOR="white" >Departamento:</FONT>  </label>
+           </left>
+           <right>
+            <select type="" class="" id="txtdepa" name="departamento"  style="WIDTH: auto;">
+                <option value="Administración">Administración</option>
+                <option value="Adopción">Adopción</option>
+                <option value="Compras">Compras</option>
+                <option value="Logística">Logística</option>
+                <option value="Recursos Humanos">Recursos Humanos</option>
+            </select>
                 <label style="color: red">{{ $errors -> first('departamento') }}</label>
-              </left>
+           </right>
         </div>
 
         <div class="form-group" style="padding: 15px">

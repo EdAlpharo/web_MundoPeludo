@@ -60,7 +60,14 @@
 
         <div class="form-group p-2" style="padding: auto">
            <label>departamento:</label>
-           <input type="" class="" id="txtdepa" name="departamento" value="{{$usuarios->departamento}}"  style="WIDTH: auto;">
+           <select type="" class="" id="txtdepa" name="departamento"  style="WIDTH: auto;">
+            <option value="{{$usuarios->departamento}}">{{$usuarios->departamento}}</option>
+            <option value="Administración">Administración</option>
+            <option value="Adopción">Adopción</option>
+            <option value="Compras">Compras</option>
+            <option value="Logística">Logística</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+           </select>
         </div>
 
         <div class="form-group p-2" style="padding: auto">
