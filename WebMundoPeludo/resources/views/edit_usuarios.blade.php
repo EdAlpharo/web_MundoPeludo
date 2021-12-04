@@ -21,7 +21,7 @@
 
 
 <div class="container">
-<h3 style="text-align: center; padding-top:25px">Edición de Articulos</h3>
+<h3 style="text-align: center; padding-top:25px">Edición de Usuarios</h3>
 
         @foreach ($usuarios as $usuario)
 
@@ -29,28 +29,17 @@
 
 <!-- Modal -->
 <div class="container">
-    <h5 style="color: blue">id de la mascota: 00{{$usuarios->id}} </h5>
+    <h5 style="color: blue">Actualizar Tipo de usuario en id: 00{{$usuarios->id}} </h5>
 
     <form class="contenedorform2 mt-4" action="{{route('usuarioUpdated',$usuarios->id)}}" method="POST" enctype="multipart/form-data">
-
-        <div class="form-group" style="padding: auto">
-
-            @csrf
+        @csrf
+        <h3>Nombre: {{ $usuarios->name }}</h3>
+        <div style="display: none">
+            <div class="form-group" style="padding: auto">
 
            <label class="form-group p-2"><b>Nombre:</label>
 
-           <input type="" class="" id="txtNombre" name="nombre" value="{{ $usuarios->nombre }}" style="WIDTH: auto;">
-            <br>
-        </div>
-
-        <div class="form-group p-2" style="padding: auto">
-           <label>Apellido Paterno:</label>
-           <input type="" class="" id="txtaPaterno" name="aPaterno" value="{{ $usuarios->aPaterno }}" style="WIDTH: auto;align:self">
-            <br>
-        </div>
-        <div class="form-group p-2" style="padding: auto">
-           <label>Apellido Materno:</label>
-           <input type="" class="" id="txtaMaterno" name="aMaterno" value="{{ $usuarios->aMaterno }}"  style="WIDTH: auto;">
+           <input type="" class="" id="txtNombre" name="name" value="{{ $usuarios->name }}" style="WIDTH: auto;">
             <br>
         </div>
         <div class="form-group p-2" style="padding: auto">
@@ -59,25 +48,27 @@
         </div>
 
         <div class="form-group p-2" style="padding: auto">
-           <label>departamento:</label>
-           <select type="" class="" id="txtdepa" name="departamento"  style="WIDTH: auto;">
-            <option value="{{$usuarios->departamento}}">{{$usuarios->departamento}}</option>
-            <option value="Administración">Administración</option>
-            <option value="Adopción">Adopción</option>
-            <option value="Compras">Compras</option>
-            <option value="Logística">Logística</option>
-            <option value="Recursos Humanos">Recursos Humanos</option>
-           </select>
+           <label>sexo:</label>
+           <input type="" class="" id="txtSexo" name="sexo" value="{{$usuarios->sexo}}"  style="WIDTH: auto;">
         </div>
 
         <div class="form-group p-2" style="padding: auto">
            <label>Contraseña:</label>
-           <input type="" class="" id="txtPass" name="pass" value="{{$usuarios->pass}}"  style="WIDTH: auto;">
+           <input type="" class="" id="txtContraseña" name="password" value="{{$usuarios->password}}"  style="WIDTH: auto;">
         </div>
+        </div>
+
         <div class="form-group p-2" style="padding: auto">
-           <label>Confirmar contraseña:</label>
-           <input type="" class="" id="txtcpass" name="cpass" value="{{$usuarios->cpass}}"  style="WIDTH: auto;">
+           <label>Tipo de usuario:</label>
+           <select type="" class="" id="txtTipoUs" name="tipo_usuario"  style="WIDTH: auto;">
+            <option value="{{$usuarios->tipo_usuario}}">{{$usuarios->tipo_usuario}}</option>
+            <option value="admin">admin</option>
+            <option value="compras">compras</option>
+            <option value="logistica">logistica</option>
+            <option value="user">user</option>
+           </select>
         </div>
+
 
         <div class="modal-footer">
         <a type="button" class="btn btn-secondary" href="{{route('actUser')}}">Cancelar</a>

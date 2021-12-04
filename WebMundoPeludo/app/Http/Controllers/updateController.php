@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\usuario;
 use App\Models\mascota;
 use App\Models\articulo;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\User;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class updateController extends Controller
@@ -17,21 +17,18 @@ class updateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function get_usuario($id){
-        $usuarios = usuario::find($id);
+        $usuarios = User::find($id);
         return view('edit_usuarios', ['usuarios' => $usuarios]);
     }
 
-
     public function update_usuario($id, Request $request)
     {
-        $usuario = usuario::findOrFail($id);
-        $usuario->nombre = $request->input('nombre');
-        $usuario->aPaterno = $request->input('aPaterno');
-        $usuario->aMaterno = $request->input('aMaterno');
+        $usuario = User::findOrFail($id);
+        $usuario->name = $request->input('name');
         $usuario->email = $request->input('email');
-        $usuario->departamento = $request->input('departamento');
-        $usuario->pass = $request->input('pass');
-        $usuario->cpass = $request->input('cpass');
+        $usuario->sexo = $request->input('sexo');
+        $usuario->password = $request->input('password');
+        $usuario->tipo_usuario = $request->input('tipo_usuario');
         $usuario->save();
 
         alert()->success('Usuario actualizado correctamente', 'Usuario actualizado');

@@ -26,7 +26,7 @@ class PdfController extends Controller
 
     public function reporteUsuarios(){
         $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','departamento')->get();
-        $users = \DB::table('users')->select('id','name','email','sexo')->get();
+        $users = \DB::table('users')->select('id','name','email','sexo','tipo_usuario')->get();
         $view =  \View::make('reporte_usuariosPDF', compact('usuarios','users'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);

@@ -26,40 +26,15 @@
 <body>
 <h2 style="text-align: center">Reporte de Usuarios</h2>
 <br><br>
-<h4>Empleados</h4>
-<table>
-    <thead>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido Paterno</th>
-            <th scope="col">Apellido Materno</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Departamento</th>
-    </thead>
-    <br><br><br>
-    <tbody>
-        <tr>
-            @foreach ($usuarios as $usuario)
-                <tr>
-                    <td>{{$usuario->id}}</td>
-                    <td>{{$usuario->nombre}}</td>
-                    <td>{{$usuario->aPaterno}}</td>
-                    <td>{{$usuario->aMaterno}}</td>
-                    <td>{{$usuario->email}}</td>
-                    <td>{{$usuario->departamento}}</td>
 
-                </tr>
-            @endforeach
-        </tr>
-    </tbody>
-</table>
-<h4>Clientes</h4>
+<h4>Usuarios registrados</h4>
 <table>
     <thead>
             <th scope="col">ID</th>
             <th scope="col">Nombre</th>
             <th scope="col">Correo</th>
             <th scope="col">Sexo</th>
+            <th scope="col">Tipo de usuario</th>
     </thead>
     <br><br><br>
     <tbody>
@@ -70,6 +45,7 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->sexo}}</td>
+                    <td>{{$user->tipo_usuario}}</td>
                 </tr>
             @endforeach
         </tr>

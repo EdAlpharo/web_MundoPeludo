@@ -18,7 +18,7 @@ class getController extends Controller
     public function recuperar_usuario(){
 
         $usuarios = \DB::table('usuarios')->select('id','nombre','aPaterno','aMaterno','email','pass','departamento')->get();
-        $users = \DB::table('users')->select('id','name','email','sexo','password','created_at','updated_at')->get();
+        $users = \DB::table('users')->select('id','name','email','sexo','password','created_at','updated_at','tipo_usuario')->get();
         return view('Admin_users',['usuarios'=>$usuarios],['users'=>$users]);
     }
     public function recuperar_articulo(){
@@ -78,7 +78,11 @@ class getController extends Controller
              ->select(\DB::raw('count(*) as cantidad, sexo'))
              ->groupBy('sexo')
              ->get();
-        return view('estadisticas_usuarios',['total_usuarios'=>$total_usuarios]);
+        $tipo_usuario = \DB::table('users')
+                ->select(\DB::raw('count(*) as cantidad, tipo_usuario'))
+                ->groupBy('tipo_usuario')
+                ->get();
+        return view('estadisticas_usuarios',['total_usuarios'=>$total_usuarios,'tipo_usuario'=>$tipo_usuario]);
     }
     public function mascota_adoptar(){
         $mascotas = \DB::table('mascotas')->select('id','especie','raza','edad','condicion_salud','vacunado','sexo','imagen')

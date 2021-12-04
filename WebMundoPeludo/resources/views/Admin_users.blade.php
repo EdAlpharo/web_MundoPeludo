@@ -28,66 +28,14 @@
 
 
 <form class="form-search content-search navbar-form" action="datosUsuario" style="align: center">
-    <div class="input-group" style="padding: 25px">
-        <form class="d-flex">
-        <input class="me-2" placeholder="Ingrese el usuario a buscar" size="25">
-        <button class="btn btn-outline-success">Buscar</button>
-      </form>
-
-    </div>
     <div style="padding-left: 25px">
         <a class="btn btn-outline-success button" href="{{route('NUsuarios')}}">Nuevo Usuario</a>
     </div>
 </form>
 
-
-
-<div class="container-fluid" style="padding: 25px">
-    <h4 style="text-align: center">Empleados</h4>
-    <br>
-    <table class="table table-success">
-  <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido Paterno</th>
-        <th scope="col">Apellido Materno</th>
-        <th scope="col">Correo</th>
-        <th scope="col">Departamento</th>
-        <th scope="col">Contraseña</th>
-        <th scope="col">Actualizar</th>
-        <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-        @foreach ($usuarios as $usuario)
-        <tr>
-            <td>00{{$usuario->id}}</td>
-            <td>{{$usuario->nombre}}</td>
-            <td>{{$usuario->aPaterno}}</td>
-            <td>{{$usuario->aMaterno}}</td>
-            <td>{{$usuario->email}}</td>
-            <td>{{$usuario->departamento}}</td>
-            <td>{{$usuario->pass}}</td>
-            <td><a type="button" class="material-icons-outlined" href="{{route('usuariosUpdate',$usuario->id)}}">edit</a></td>
-            <td>
-                <form action="{{route('usuariosDelete',$usuario->id)}}" method="POST" class="eliminarUsuario">
-                @csrf
-                @method('DELETE')
-                <button class="material-icons-outlined" type="submit">delete</button>
-            </form>
-
-            </td>
-        </tr>
-       @endforeach
-
-  </tbody>
-</table>
-
-</div>
 <br>
 <div class="container-fluid" style="padding: 25px">
-    <h4 style="text-align: center">Usuarios - clientes</h4>
+    <h4 style="text-align: center">Usuarios</h4>
     <br>
     <table class="table table-success">
   <thead>
@@ -96,9 +44,12 @@
         <th scope="col">Nombre</th>
         <th scope="col">sexo</th>
         <th scope="col">Correo Electronico</th>
-        <th scope="col">contraseña</th>
+        <th scope="col">Contraseña</th>
+        <th scope="col">Tipo de usuario</th>
         <th scope="col">Fecha creación</th>
         <th scope="col">Fecha actualización</th>
+        <th scope="col">Actualizar</th>
+        <th scope="col">Eliminar</th>
 
     </tr>
   </thead>
@@ -110,8 +61,18 @@
             <td>{{$user->sexo}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->password}}</td>
+            <td>{{$user->tipo_usuario}}</td>
             <td>{{$user->created_at}}</td>
             <td>{{$user->updated_at}}</td>
+            <td><a type="button" class="material-icons-outlined" href="{{route('usuariosUpdate',$user->id)}}">edit</a></td>
+            <td>
+                <form action="{{route('usuariosDelete',$user->id)}}" method="POST" class="eliminarUsuario">
+                @csrf
+                @method('DELETE')
+                <button class="material-icons-outlined" type="submit">delete</button>
+            </form>
+
+            </td>
         </tr>
        @endforeach
 

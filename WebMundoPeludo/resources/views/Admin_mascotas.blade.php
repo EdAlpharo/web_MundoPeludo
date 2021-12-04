@@ -29,13 +29,6 @@
 <div class="container">
 <h3 style="text-align: center; padding-top:25px">Administración de mascotas</h3>
 <form class="form-search content-search navbar-form" action="" style="align: center">
-    <div class="input-group" style="padding: 25px">
-        <form class="d-flex">
-        <input class="me-2" placeholder="Ingrese el tipo de mascota a buscar" size="25">
-        <button class="btn btn-outline-success">Buscar</button>
-      </form>
-
-    </div>
     <div style="padding-left: 25px">
         <a class="btn btn-outline-success button" href="{{route('NMascotas')}}">Nueva mascota</a>
     </div>

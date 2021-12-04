@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\usuario;
 use App\Models\mascota;
 use App\Models\articulo;
-use Illuminate\Http\User;
+use App\Models\User;
 
 class deleteController extends Controller
 {
@@ -19,7 +19,7 @@ class deleteController extends Controller
 
     }
     public function delete_usuario($id){
-        $usuario = usuario::find($id);
+        $usuario = User::find($id);
         $usuario->delete();
         alert()->success('Registro eliminado con éxito');
         return redirect()->route('actUser');

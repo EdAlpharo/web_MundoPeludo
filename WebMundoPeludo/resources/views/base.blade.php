@@ -18,7 +18,10 @@
 </head>
 <body>
 <nav class="navbar-nav navbar-expand-sm navbar-light bg-light navbar" id="topheader">
-    <h1>Sistema administrativo</h1>
+    <h1>Sistema administrativo @if (auth()->user()->tipo_usuario == 'admin' || auth()->user()->tipo_usuario == 'logistica' || auth()->user()->tipo_usuario == 'compras')
+        [{{ auth()->user()->tipo_usuario }}]
+        @endif</h1>
+
     <h5>Usuario: {{ auth()->user()->name }}</h5>
     <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
         <div class="container-fluid">
@@ -32,28 +35,91 @@
                 <div class="dropdown btn">
                 <a class="dropbtn button btn" href="{{route('inicio')}}">INICIO</a>
                 </div>
+                @if (auth()->user()->tipo_usuario == 'admin' || auth()->user()->tipo_usuario == 'compras' || auth()->user()->tipo_usuario == 'logistica')
                 <div class="dropdown btn">
                     <button class="dropbtn">ADMINISTRACIÓN</button>
                 <div class="dropdown-content">
                     <a href="{{route('actMascota')}}">Mascotas</a>
                     <a href="{{route('actArticulo')}}">Artículos</a>
+                    @if (auth()->user()->tipo_usuario == 'admin')
                     <a href="{{route('actUser')}}">Usuarios</a>
+                    @else
+                    <a href="{{route('actUser')}}" style="display: none">Usuarios</a>
+                    @endif
                 </div>
                 </div>
+                @else
                 <div class="dropdown btn">
+                    <button class="dropbtn" style="display: none">ADMINISTRACIÓN</button>
+                <div class="dropdown-content">
+                    @if (auth()->user()->tipo_usuario == 'user')
+                    <a href="{{route('actMascota')}}" style="display: none">Mascotas</a>
+                    <a href="{{route('actArticulo')}}" style="display: none">Artículos</a>
+                    @else
+                    <a href="{{route('actMascota')}}">Mascotas</a>
+                    <a href="{{route('actArticulo')}}">Artículos</a>
+                    @endif
+
+                    @if (auth()->user()->tipo_usuario == 'admin')
+                    <a href="{{route('actUser')}}">Usuarios</a>
+                    @else
+                    <a href="{{route('actUser')}}" style="display: none">Usuarios</a>
+                    @endif
+                </div>
+                </div>
+                @endif
+                @if (auth()->user()->tipo_usuario == 'admin' || auth()->user()->tipo_usuario == 'compras' || auth()->user()->tipo_usuario == 'logistica')
+                 <div class="dropdown btn">
                 <button class="dropbtn">ESTADISTICAS</button>
                 <div class="dropdown-content">
                     <a href="{{route('estMascotas')}}">Mascotas</a>
                     <a href="{{route('estArticulos')}}">Artículos</a>
+                    @if (auth()->user()->tipo_usuario == 'admin')
                     <a href="{{route('estUsuarios')}}">Usuarios</a>
+                    @else
+                    <a href="{{route('estUsuarios')}}" style="display: none">Usuarios</a>
+                    @endif
                 </div>
                 </div>
+                @else
+                 <div class="dropdown btn">
+                <button class="dropbtn" style="display: none">ESTADISTICAS</button>
+                <div class="dropdown-content">
+                    @if (auth()->user()->tipo_usuario == 'user')
+                    <a href="{{route('estMascotas')}}" style="display: none">Mascotas</a>
+                    <a href="{{route('estArticulos')}}" style="display: none">Artículos</a>
+                    @else
+                    <a href="{{route('estMascotas')}}">Mascotas</a>
+                    <a href="{{route('estArticulos')}}">Artículos</a>
+                    @endif
+
+                    @if (auth()->user()->tipo_usuario == 'admin')
+                    <a href="{{route('estUsuarios')}}">Usuarios</a>
+                    @else
+                    <a href="{{route('estUsuarios')}}" style="display: none">Usuarios</a>
+                    @endif
+                </div>
+                </div>
+                @endif
+                @if (auth()->user()->tipo_usuario == 'admin' || auth()->user()->tipo_usuario == 'user' || auth()->user()->tipo_usuario == 'logistica')
                 <div class="dropdown btn">
                 <a class="dropbtn button btn" href="{{route('SolicitarAdopcion')}}">ADOPCIÓN</a>
                 </div>
+                @else
+                <div class="dropdown btn">
+                <a class="dropbtn button btn" href="{{route('SolicitarAdopcion')}}" style="display: none">ADOPCIÓN</a>
+                </div>
+                @endif
+                @if (auth()->user()->tipo_usuario == 'admin' || auth()->user()->tipo_usuario == 'user' || auth()->user()->tipo_usuario == 'compras' || auth()->user()->tipo_usuario == 'logistica')
                 <div class="dropdown btn">
                 <a class="dropbtn button btn" href="{{route('SolicitarArticulo')}}">COMPRAS</a>
                 </div>
+                @else
+                <div class="dropdown btn">
+                <a class="dropbtn button btn" href="{{route('SolicitarArticulo')}}" style="display: none">COMPRAS</a>
+                </div>
+                @endif
+
             </ul>
             <ul>
                 <div class="dropdown btn">
