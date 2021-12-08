@@ -47,7 +47,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    public function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -63,7 +63,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    public function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
@@ -71,5 +71,25 @@ class RegisterController extends Controller
             'sexo' => $data['sexo'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function registrar(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'sexo' => ['string', 'max:15'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $usuario = new User();
+        $usuario->name = $request->name;
+        $usuario->email = $request->email;
+        $usuario->sexo = $request->sexo;
+        $usuario->password = Hash::make($request->password);
+        $usuario->save();
+        alert()->success('Alta de usuarios','El usuario '.$usuario->name.' con ID 00'.$usuario->id.' fué dado de alta con exito');
+
+        return redirect()->route('actUser');
     }
 }

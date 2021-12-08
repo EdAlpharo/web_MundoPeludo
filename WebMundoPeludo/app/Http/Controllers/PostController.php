@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use App\Models\usuario;
 use App\Models\mascota;
 use App\Models\articulo;
+use App\Models\users2;
 use Illuminate\Http\User;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -122,5 +124,26 @@ class PostController extends Controller
         return redirect()->route('actArticulo');
 
         }
+    public function registrar(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'sexo' => ['string', 'max:15'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $usuario = new users2();
+        $usuario->name = $request->name;
+        $usuario->email = $request->email;
+        $usuario->sexo = $request->sexo;
+        $usuario->password = Hash::make($request->password);
+        $usuario->save();
+
+        alert()->success('Alta de usuarios','El usuario '.$usuario->name.' con ID 00'.$usuario->id.' fué dado de alta con exito');
+
+        return redirect()->route('actUser');
+    }
 }
+
 

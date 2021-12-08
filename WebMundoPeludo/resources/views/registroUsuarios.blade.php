@@ -9,87 +9,93 @@
   </head>
   <body>
     <br>
-    <h1 class="display-4 text-center" style = "font-family:Calisto MT;">Registro de usuario</h1>
+    <br>
+    <br>
 
-    <div id="general">
-       <br>
-      <H3 align="center" style = "font-family:Calisto MT;"><FONT COLOR="white">USUARIO</FONT></H3>
-      <center>
-      <img src="img/logo3.png" width="60" height="60" /></center>
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header" style="text-align: center; font-size: 26px;">{{ __('Registro de usuarios') }}</div>
+                <br>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('registrar') }}">
+                        @csrf
 
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
-      <form class="contenedorform2 mt-4" action="{{route('nuevoUsuario.registro_usuario')}}" method="POST">
-        <div class="form-group" style="padding: 15px">
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-             @csrf
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo eléctronico') }}</label>
 
-              <left>
-           <label><FONT COLOR="white">Nombre:</FONT>  </label>
-           <input id="txtNombre" name="nombre" value="{{ old('nombre') }}" placeholder="Ingrese el nombre" style="WIDTH: auto;color:black;">
-           <label style="color: red">{{ $errors -> first('nombre') }}</label>
-              </left>
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('sexo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="sexo" type="text" class="form-control" name="sexo">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Registrar') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div class="form-group" style="padding: 15px">
-              <left>
-           <label><FONT COLOR="white">Apellido paterno: </FONT>  </label>
-           <input type="" class="" id="txtAPaterno" name="aPaterno" value="{{ old('aPaterno') }}"  placeholder="Ingrese apellido paterno" style="WIDTH: auto;color:black;">
-              <label style="color: red">{{ $errors -> first('aPaterno') }}</label>
-              </left>
-        </div>
-
-        <div class="form-group" style="padding: 15px">
-              <left>
-           <label><FONT COLOR="white">Apellido materno: </FONT>  </label>
-           <input type="" class="" id="txtAMaterno" name="aMaterno" value="{{ old('aMaterno') }}"  placeholder="Ingrese apellido materno" style="WIDTH: auto;color:black;">
-                <label style="color: red">{{ $errors -> first('aMaterno') }}</label>
-              </left>
-        </div>
-
-        <div class="form-group"style="padding: 15px">
-              <left>
-           <label><FONT COLOR="white" >Email:</FONT>  </label>
-           <input type="" class="" id="txtEmail" name="email"  value="{{ old('email') }}"  placeholder="Ingrese el email" style="WIDTH: auto;color:black;">
-                <label style="color: red">{{ $errors -> first('email') }}</label>
-              </left>
-        </div>
-
-        <div class="form-group"style="padding: 15px">
-            <left>
-            <label><FONT COLOR="white" >Departamento:</FONT>  </label>
-           </left>
-           <right>
-            <select type="" class="" id="txtdepa" name="departamento"  style="WIDTH: auto;">
-                <option value="Administración">Administración</option>
-                <option value="Adopción">Adopción</option>
-                <option value="Compras">Compras</option>
-                <option value="Logística">Logística</option>
-                <option value="Recursos Humanos">Recursos Humanos</option>
-            </select>
-                <label style="color: red">{{ $errors -> first('departamento') }}</label>
-           </right>
-        </div>
-
-        <div class="form-group" style="padding: 15px">
-              <left>
-           <label><FONT COLOR="white">Contraseña: </FONT>  </label>
-           <input type="password" class="" id="txtPass" name="pass" value="{{ old('pass') }}"  placeholder="Ingrese una contraseña" style="WIDTH:auto;color:black;">
-                <label style="color: red">{{ $errors -> first('pass') }}</label>
-              </left>
-        </div>
-
-        <div class="form-group" style="padding: 15px">
-              <left>
-           <label><FONT COLOR="white">Confirmación de contraseña: </FONT>  </label>
-           <input type="" class="" id="txtConfimacionPass" name="cpass"  value="{{ old('contraseña') }}"  placeholder="Confirme la contraseña" style="WIDTH:auto;color:black;">
-                <label style="color: red">{{ $errors -> first('cpass') }}</label>
-              </left>
-        </div>
-            <center><button class="btnAgregar" type="submit"><FONT COLOR="white">Agregar registro</font></button></center>
-          </form>
     </div>
-
-
+</div>
+<br>
+<br>
+<br>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 @stop

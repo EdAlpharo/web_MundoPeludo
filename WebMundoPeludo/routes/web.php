@@ -52,6 +52,7 @@ Route::post('nuevoUsuario',[PostController::class, 'registro_usuario'])->name('n
 Route::post('nuevoArticulo',[PostController::class, 'registro_articulo'])->name('nuevoArticulo.registro_articulo');
 Route::post('nuevaMascota',[PostController::class, 'registro_mascota'])->name('nuevaMascota.registro_mascota');
 Route::post('user',[controladorLogin::class, 'registro'])->name('user.registro');
+Route::post('usuario',[PostController::class, 'registrar'])->name('registrar');
 /*FIN*/
 
 /*RUTAS DE RECUPERACION DE DATOS DE BD*/
